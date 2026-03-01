@@ -1,0 +1,134 @@
+'use client'
+import { useEffect, useRef } from 'react'
+
+export default function Hero() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')!
+    let animId: number
+
+    const resize = () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+    }
+    resize()
+    window.addEventListener('resize', resize)
+
+    // Particle system
+    const particles = Array.from({ length: 80 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 1.5 + 0.5,
+      alpha: Math.random() * 0.5 + 0.1,
+    }))
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy
+        if (p.x < 0) p.x = canvas.width
+        if (p.x > canvas.width) p.x = 0
+        if (p.y < 0) p.y = canvas.height
+        if (p.y > canvas.height) p.y = 0
+
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(168,85,247,${p.alpha})`
+        ctx.fill()
+      })
+
+      // Connect nearby particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x
+          const dy = particles[i].y - particles[j].y
+          const dist = Math.sqrt(dx*dx + dy*dy)
+          if (dist < 120) {
+            ctx.beginPath()
+            ctx.moveTo(particles[i].x, particles[i].y)
+            ctx.lineTo(particles[j].x, particles[j].y)
+            ctx.strokeStyle = `rgba(168,85,247,${0.12 * (1 - dist/120)})`
+            ctx.lineWidth = 0.5
+            ctx.stroke()
+          }
+        }
+      }
+      animId = requestAnimationFrame(draw)
+    }
+    draw()
+    return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', resize) }
+  }, [])
+
+  return (
+    <section className="relative min-h-screen flex flex-col justify-end pb-24 px-8 md:px-16 overflow-hidden" style={{background:'radial-gradient(ellipse 80% 60% at 65% 35%, #1e0a3a 0%, #0e0e14 65%)'}}>
+      {/* Canvas particles */}
+      <canvas ref={canvasRef} className="absolute inset-0 z-0" />
+
+      {/* Grid overlay */}
+      <div className="absolute inset-0 z-0" style={{backgroundImage:'linear-gradient(rgba(168,85,247,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,0.05) 1px,transparent 1px)',backgroundSize:'56px 56px'}} />
+
+      {/* Scan line */}
+      <div className="absolute left-0 right-0 h-px z-0 pointer-events-none" style={{background:'linear-gradient(90deg,transparent,rgba(168,85,247,0.6),transparent)',animation:'scan 8s linear infinite',top:0}} />
+
+      {/* Glow orbs */}
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full z-0 pointer-events-none" style={{background:'radial-gradient(circle,rgba(168,85,247,0.15) 0%,transparent 70%)',filter:'blur(40px)'}} />
+      <div className="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full z-0 pointer-events-none" style={{background:'radial-gradient(circle,rgba(59,130,246,0.1) 0%,transparent 70%)',filter:'blur(40px)'}} />
+
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Eyebrow */}
+        <div className="flex items-center gap-3 mb-8 opacity-0 animate-[fadeUp_0.7s_0.2s_forwards]" style={{animationFillMode:'forwards'}}>
+          <span className="w-8 h-px bg-purple-400" />
+          <span className="font-mono text-[0.7rem] tracking-[0.25em] uppercase text-purple-400">IT Solutions & Digital Services — Est. 2019</span>
+        </div>
+
+        {/* Title */}
+        <h1 className="font-display font-black leading-[0.88] mb-10" style={{fontSize:'clamp(3.5rem,11vw,11rem)'}}>
+          <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.4s forwards'}}>
+            <span className="glitch text-white" data-text="BUILD.">BUILD.</span>
+          </span>
+          <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.55s forwards'}}>
+            <span style={{WebkitTextStroke:'1px rgba(168,85,247,0.7)',color:'transparent'}}>LAUNCH.</span>
+          </span>
+          <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.7s forwards',color:'#a855f7',textShadow:'0 0 40px rgba(168,85,247,0.5), 0 0 80px rgba(168,85,247,0.2)'}}>
+            SUPPORT.
+          </span>
+        </h1>
+
+        {/* Bottom row */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 opacity-0" style={{animation:'fadeUp 0.8s 0.9s forwards'}}>
+          <p className="max-w-sm font-body text-purple-100/50 leading-relaxed font-light text-base">
+            We design, develop, and support digital products — from high-performance websites to enterprise IT systems that keep your business running 24/7.
+          </p>
+          <div className="flex items-center gap-4">
+            <a href="#services" className="flex items-center gap-3 font-mono text-[0.75rem] tracking-[0.15em] uppercase bg-purple-600 hover:bg-purple-500 text-white px-7 py-4 transition-all duration-300 hover:-translate-y-1 group" style={{boxShadow:'0 0 30px rgba(168,85,247,0.3)'}}>
+              Explore Services
+              <span className="group-hover:translate-x-1.5 transition-transform duration-200">→</span>
+            </a>
+            <a href="#work" className="flex items-center gap-3 font-mono text-[0.75rem] tracking-[0.15em] uppercase border border-purple-500/40 text-purple-300 hover:border-purple-400 px-7 py-4 transition-all duration-300 hover:bg-purple-500/10">
+              View Work
+            </a>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-0 right-0 flex flex-col items-center gap-2 opacity-0" style={{animation:'fadeIn 1s 1.3s forwards'}}>
+          <span className="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-purple-400/50 [writing-mode:vertical-rl]">Scroll</span>
+          <div className="w-px h-16" style={{background:'linear-gradient(to bottom, rgba(168,85,247,0.6), transparent)',animation:'scrollPulse 2s infinite'}} />
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+        @keyframes scan { 0%{top:-2px} 100%{top:100vh} }
+        @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+      `}</style>
+    </section>
+  )
+}
