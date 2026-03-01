@@ -7,8 +7,14 @@ export default function Hero() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const ctx = canvas.getContext('2d')!
-    let animId: number
+    
+    const ctx = canvas.getContext('2d')
+    if (!ctx) {
+      console.warn('Canvas 2D context not supported')
+      return
+    }
+    
+    let animId: number | undefined
 
     const resize = () => {
       canvas.width = window.innerWidth
@@ -17,8 +23,9 @@ export default function Hero() {
     resize()
     window.addEventListener('resize', resize)
 
-    // Particle system
-    const particles = Array.from({ length: 80 }, () => ({
+    // Particle system - responsive particle count
+    const particleCount = window.innerWidth < 768 ? 40 : 80
+    const particles = Array.from({ length: particleCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.4,
@@ -61,7 +68,12 @@ export default function Hero() {
       animId = requestAnimationFrame(draw)
     }
     draw()
-    return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', resize) }
+    return () => { 
+      if (animId !== undefined) {
+        cancelAnimationFrame(animId)
+      }
+      window.removeEventListener('resize', resize) 
+    }
   }, [])
 
   return (
@@ -84,7 +96,7 @@ export default function Hero() {
         {/* Eyebrow */}
         <div className="flex items-center gap-3 mb-8 opacity-0 animate-[fadeUp_0.7s_0.2s_forwards]" style={{animationFillMode:'forwards'}}>
           <span className="w-8 h-px bg-purple-400" />
-          <span className="font-mono text-[0.7rem] tracking-[0.25em] uppercase text-purple-400">IT Solutions & Digital Services — Est. 2019</span>
+          <span className="font-mono text-[0.7rem] tracking-[0.25em] uppercase text-purple-400">IT Solutions & Digital Services — Est. 2026</span>
         </div>
 
         {/* Title */}

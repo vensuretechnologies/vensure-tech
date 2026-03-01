@@ -1,10 +1,32 @@
 const footerLinks = {
-  Services: ['Website Development', 'UI/UX Design', 'E-Commerce Solutions', 'IT Support & Helpdesk', 'Managed IT Services', 'Cloud & Integration'],
-  Company:  ['About', 'Case Studies', 'Careers', 'Blog', 'Press'],
-  Legal:    ['Privacy Policy', 'Terms of Service', 'Cookie Policy'],
+  Services: [
+    { name: 'Website Development', href: '#services' },
+    { name: 'UI/UX Design', href: '#services' },
+    { name: 'E-Commerce Solutions', href: '#services' },
+    { name: 'IT Support & Helpdesk', href: '#services' },
+    { name: 'Managed IT Services', href: '#services' },
+    { name: 'Cloud & Integration', href: '#services' }
+  ],
+  Company: [
+    { name: 'About', href: '#' },
+    { name: 'Case Studies', href: '#work' },
+    { name: 'Careers', href: 'mailto:careers@vensuretechnologies.in' },
+    { name: 'Blog', href: '#' },
+    { name: 'Contact', href: '#contact' }
+  ],
+  Legal: [
+    { name: 'Privacy Policy', href: '#' },
+    { name: 'Terms of Service', href: '#' },
+    { name: 'Cookie Policy', href: '#' }
+  ],
 }
 
-const socials = ['LinkedIn', 'Twitter', 'GitHub', 'Instagram']
+const socials = [
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/vensure-technologies' },
+  { name: 'Twitter', href: 'https://twitter.com/vensuretechh' },
+  { name: 'GitHub', href: 'https://github.com/vensuretech' },
+  { name: 'Instagram', href: 'https://instagram.com/vensuretech' }
+]
 
 export default function Footer() {
   return (
@@ -17,16 +39,31 @@ export default function Footer() {
             <p className="font-body font-light text-sm leading-relaxed text-white/35 max-w-xs mb-8">
               An IT solutions company delivering websites, digital products, and technical support for businesses of all sizes.
             </p>
-            <div className="flex gap-5">
+            <div className="flex gap-5 mb-8">
               {socials.map((s) => (
                 <a
-                  key={s}
-                  href="#"
+                  key={s.name}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-mono text-[10px] tracking-widest uppercase text-white/25 hover:text-purple-bright transition-colors duration-200"
                 >
-                  {s}
+                  {s.name}
                 </a>
               ))}
+            </div>
+            
+            {/* Contact Info */}
+            <div className="space-y-2">
+              <a href="mailto:hello@vensuretechnologies.in" className="block font-mono text-xs text-white/40 hover:text-purple-bright transition-colors">
+                hello@vensuretechnologies.in
+              </a>
+              <a href="tel:+917799192932" className="block font-mono text-xs text-white/40 hover:text-purple-bright transition-colors">
+                +91 7799192932
+              </a>
+              <p className="font-mono text-xs text-white/30">
+                Response within 2 hours
+              </p>
             </div>
           </div>
 
@@ -36,9 +73,14 @@ export default function Footer() {
               <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-purple-glow/60 mb-6">{col}</p>
               <ul className="space-y-3">
                 {links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="font-body text-sm text-white/35 hover:text-purple-bright transition-colors duration-200">
-                      {l}
+                  <li key={l.name}>
+                    <a 
+                      href={l.href} 
+                      className="font-body text-sm text-white/35 hover:text-purple-bright transition-colors duration-200"
+                      target={l.href.startsWith('mailto:') ? '_self' : l.href.startsWith('#') ? '_self' : '_blank'}
+                      rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    >
+                      {l.name}
                     </a>
                   </li>
                 ))}
@@ -50,7 +92,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-purple-glow/8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-mono text-[10px] tracking-wider text-white/20">
-            © 2025 Vensure Technologies. All rights reserved.
+            © 2026 Vensure Technologies. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-purple-glow animate-pulse" />

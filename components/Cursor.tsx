@@ -7,7 +7,7 @@ export default function Cursor() {
 
   useEffect(() => {
     let rx = 0, ry = 0
-    let animId: number
+    let animId: number | undefined
 
     const move = (e: MouseEvent) => {
       const { clientX: x, clientY: y } = e
@@ -39,7 +39,9 @@ export default function Cursor() {
     })
     return () => {
       window.removeEventListener('mousemove', move)
-      cancelAnimationFrame(animId)
+      if (animId !== undefined) {
+        cancelAnimationFrame(animId)
+      }
     }
   }, [])
 

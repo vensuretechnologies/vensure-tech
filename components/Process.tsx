@@ -52,11 +52,20 @@ export default function Process() {
           {steps.map((s, i) => (
             <div
               key={s.step}
-              className={`reveal reveal-delay-${i + 1} group grid grid-cols-[100px_1fr_1fr] gap-10 py-12 border-t border-purple-glow/10 hover:border-purple-glow/35 transition-colors duration-300 items-start`}
+              className={`reveal reveal-delay-${i + 1} group py-8 md:py-12 border-t border-purple-glow/10 hover:border-purple-glow/35 transition-colors duration-300`}
             >
-              <span className="font-mono text-xs tracking-[0.2em] uppercase text-purple-glow mt-1">{s.step}</span>
-              <h3 className="font-display text-2xl font-bold group-hover:gradient-text transition-all duration-300">{s.title}</h3>
-              <p className="font-body font-light text-sm leading-relaxed text-white/40">{s.desc}</p>
+              {/* Mobile Layout */}
+              <div className="md:hidden space-y-4">
+                <span className="font-mono text-xs tracking-[0.2em] uppercase text-purple-glow">{s.step}</span>
+                <h3 className="font-display text-xl md:text-2xl font-bold group-hover:gradient-text transition-all duration-300">{s.title}</h3>
+                <p className="font-body font-light text-sm leading-relaxed text-white/40">{s.desc}</p>
+              </div>
+              {/* Desktop Layout */}
+              <div className="hidden md:grid grid-cols-[100px_1fr_1fr] gap-10 items-start">
+                <span className="font-mono text-xs tracking-[0.2em] uppercase text-purple-glow mt-1">{s.step}</span>
+                <h3 className="font-display text-2xl font-bold group-hover:gradient-text transition-all duration-300">{s.title}</h3>
+                <p className="font-body font-light text-sm leading-relaxed text-white/40">{s.desc}</p>
+              </div>
             </div>
           ))}
           <div className="border-t border-purple-glow/10" />

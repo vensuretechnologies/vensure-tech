@@ -1,8 +1,11 @@
 'use client'
+import { useState } from 'react'
 import { useReveal } from './useReveal'
+import ProjectModal from './ProjectModal'
 
 export default function CTA() {
   const ref = useReveal()
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <section
@@ -50,15 +53,15 @@ export default function CTA() {
         </p>
 
         <div className="reveal flex flex-col sm:flex-row items-center justify-center gap-5">
-          <a
-            href="mailto:hello@vensure.tech"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="group inline-flex items-center gap-3 px-10 py-5 font-body text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300 animate-glow-pulse"
           >
             Start a Project
             <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
-          </a>
+          </button>
           <a
-            href="tel:+14155550123"
+            href="tel:+91 7799192932"
             className="inline-flex items-center gap-2 px-8 py-5 font-body text-sm font-semibold tracking-widest uppercase border border-purple-glow/30 text-white/50 hover:text-purple-bright hover:border-purple-glow/60 transition-all duration-300"
           >
             Schedule a Call
@@ -68,8 +71,8 @@ export default function CTA() {
         {/* Contact info strip */}
         <div className="reveal mt-20 pt-10 border-t border-purple-glow/10 flex flex-col sm:flex-row items-center justify-center gap-10">
           {[
-            { label: 'Email', value: 'hello@vensure.tech' },
-            { label: 'Phone', value: '+1 (415) 555-0123' },
+            { label: 'Email', value: 'hello@vensuretechnologies.in' },
+            { label: 'Phone', value: '+91 7799192932' },
             { label: 'Response', value: 'Within 2 hours' },
           ].map(({ label, value }) => (
             <div key={label} className="text-center">
@@ -79,6 +82,11 @@ export default function CTA() {
           ))}
         </div>
       </div>
+      
+      <ProjectModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   )
 }
