@@ -2,7 +2,7 @@
 const nextConfig = {
   // Static export configuration for manual deployment
   output: 'export',
-  distDir: 'dist',
+  distDir: 'build-output',
   trailingSlash: true,
   images: {
     unoptimized: true,

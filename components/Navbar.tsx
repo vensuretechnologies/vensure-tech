@@ -445,7 +445,7 @@ export default function Navbar() {
   }, [mobileMenuOpen])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-6 transition-all duration-500 ${scrolled ? 'bg-[#0e0e14]/80 backdrop-blur-xl border-b border-purple-900/30' : ''}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-8 md:px-16 py-4 sm:py-6 transition-all duration-500 ${scrolled ? 'bg-[#0e0e14]/80 backdrop-blur-xl border-b border-purple-900/30' : ''}`}>
       {/* Logo */}
       <a 
         href={isHomePage ? "#" : "/"} 
@@ -461,7 +461,7 @@ export default function Navbar() {
           <div className="absolute inset-0 border border-purple-500/60 rotate-45 group-hover:rotate-[50deg] transition-transform duration-300" />
           <div className="absolute inset-[6px] bg-purple-500/80 rotate-45 group-hover:rotate-[55deg] transition-transform duration-300" style={{boxShadow:'0 0 12px rgba(168,85,247,0.6)'}} />
         </div>
-        <span className="font-display text-base tracking-[0.15em] text-white font-bold">VENSURE TECHNOLOGIES</span>
+        <span className="font-display text-sm sm:text-base tracking-[0.15em] text-white font-bold">VENSURE TECHNOLOGIES</span>
       </a>
 
       {/* Links */}
@@ -492,48 +492,64 @@ export default function Navbar() {
       {/* Mobile hamburger */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1.5 group"
+        className="md:hidden flex flex-col items-center justify-center w-11 h-11 space-y-1.5 group relative touch-manipulation"
+        aria-label="Toggle menu"
+        aria-expanded={mobileMenuOpen}
       >
-        <span className={`w-5 h-0.5 bg-purple-300 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-        <span className={`w-5 h-0.5 bg-purple-300 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
-        <span className={`w-5 h-0.5 bg-purple-300 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+        <span className={`w-6 h-0.5 bg-purple-300 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+        <span className={`w-6 h-0.5 bg-purple-300 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+        <span className={`w-6 h-0.5 bg-purple-300 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
       </button>
 
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#0e0e14]/95 backdrop-blur-xl md:hidden">
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
-            {links.map(l => (
-              <a
-                key={l}
-                href={
-                  l === 'Home' ? (isHomePage ? '#' : '/') :
-                  l === 'Careers' ? '/careers' : 
-                  l === 'Contact' ? '/contact' :
-                  isHomePage ? `#${l.toLowerCase()}` : `/#${l.toLowerCase()}`
-                }
-                onClick={(e) => {
-                  setMobileMenuOpen(false);
-                  if (l === 'Home' && isHomePage) {
-                    e.preventDefault(); 
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+        <div className="fixed inset-0 z-40 bg-[#0e0e14]/95 backdrop-blur-xl md:hidden overflow-hidden">
+          <div className="flex flex-col items-center justify-center h-full px-6 py-safe">
+            <div className="flex flex-col items-center space-y-6 sm:space-y-8 w-full max-w-sm">
+              {links.map(l => (
+                <a
+                  key={l}
+                  href={
+                    l === 'Home' ? (isHomePage ? '#' : '/') :
+                    l === 'Careers' ? '/careers' : 
+                    l === 'Contact' ? '/contact' :
+                    isHomePage ? `#${l.toLowerCase()}` : `/#${l.toLowerCase()}`
                   }
+                  onClick={(e) => {
+                    setMobileMenuOpen(false);
+                    if (l === 'Home' && isHomePage) {
+                      e.preventDefault(); 
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
+                  className={`font-mono text-xl sm:text-2xl tracking-[0.2em] uppercase transition-all duration-200 py-3 px-4 rounded-lg text-center w-full touch-manipulation ${getActiveMobileLinkClass(l)} hover:bg-purple-500/10`}
+                >
+                  {l}
+                </a>
+              ))}
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false)
+                  setConsultationModalOpen(true)
                 }}
-                className={`font-mono text-lg tracking-[0.2em] uppercase transition-colors duration-200 ${getActiveMobileLinkClass(l)}`}
+                className="flex items-center justify-center gap-3 font-mono text-base tracking-[0.15em] uppercase text-white bg-purple-600 border border-purple-500 px-8 py-4 rounded-lg hover:bg-purple-700 active:bg-purple-800 transition-all duration-300 mt-6 w-full touch-manipulation"
+                style={{boxShadow:'0 0 20px rgba(168,85,247,0.3)'}}
               >
-                {l}
-              </a>
-            ))}
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false)
-                setConsultationModalOpen(true)
-              }}
-              className="flex items-center gap-2 font-mono text-sm tracking-[0.15em] uppercase text-purple-300 border border-purple-500/50 px-6 py-3 hover:bg-purple-500/10 hover:border-purple-400 transition-all duration-300 mt-8"
-              style={{boxShadow:'0 0 20px rgba(168,85,247,0.1)'}}
+                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                Get Started
+              </button>
+            </div>
+
+            {/* Close menu area */}
+            <button 
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-6 right-6 w-11 h-11 flex items-center justify-center text-purple-300 hover:text-white transition-colors touch-manipulation"
+              aria-label="Close menu"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-              Get Started
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
             </button>
           </div>
         </div>
