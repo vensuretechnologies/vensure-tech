@@ -1,3 +1,6 @@
+'use client'
+import { useState, useEffect } from 'react'
+
 const footerLinks = {
   Services: [
     { name: 'Website Development', href: '#services' },
@@ -29,6 +32,29 @@ const socials = [
 ]
 
 export default function Footer() {
+  const [currentTime, setCurrentTime] = useState('')
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date()
+      const formatted = now.toLocaleString('en-US', {
+        month: '2-digit',
+        day: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      })
+      setCurrentTime(formatted)
+    }
+
+    updateTime() // Set initial time
+    const interval = setInterval(updateTime, 1000) // Update every second
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <footer className="relative bg-surface border-t border-brand-red-glow/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 pt-20 pb-10">
@@ -94,9 +120,14 @@ export default function Footer() {
           <p className="font-mono text-[10px] tracking-wider text-white/20">
             © 2026 Vensure Technologies. All rights reserved.
           </p>
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-brand-red-glow animate-pulse" />
-            <span className="font-mono text-[10px] tracking-wider text-brand-red-glow/40 uppercase">All systems operational</span>
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[10px] tracking-wider text-white/30 uppercase">
+              {currentTime}
+            </span>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-brand-red-glow animate-pulse" />
+              <span className="font-mono text-[10px] tracking-wider text-brand-red-glow/40 uppercase">All systems operational</span>
+            </div>
           </div>
         </div>
       </div>

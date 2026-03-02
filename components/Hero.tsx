@@ -9,10 +9,7 @@ export default function Hero() {
     if (!canvas) return
     
     const ctx = canvas.getContext('2d')
-    if (!ctx) {
-      console.warn('Canvas 2D context not supported')
-      return
-    }
+    if (!ctx) return
     
     let animId: number | undefined
 

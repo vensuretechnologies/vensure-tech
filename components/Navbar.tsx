@@ -417,46 +417,16 @@ export default function Navbar() {
   }, [isHomePage])
 
   const getActiveLinkClass = (link: string) => {
-    // Comprehensive debugging
-    console.log('🔍 FULL DEBUG INFO:')
-    console.log(`   Link: "${link}"`)
-    console.log(`   Pathname: "${pathname}"`)
-    console.log(`   Pathname length: ${pathname.length}`)
-    console.log(`   Pathname type: ${typeof pathname}`)
-    console.log(`   IsHomePage: ${isHomePage}`)
-    console.log(`   ActiveSection: "${activeSection}"`)
-    
-    // Check each condition explicitly
-    if (link === 'Careers') {
-      console.log(`   🎯 Checking Careers: pathname === '/careers' ? ${pathname === '/careers'}`)
-      console.log(`   🎯 Pathname chars: [${pathname.split('').map(c => `"${c}"`).join(', ')}]`)
-    }
-    if (link === 'Contact') {
-      console.log(`   🎯 Checking Contact: pathname === '/contact' ? ${pathname === '/contact'}`)
-      console.log(`   🎯 Pathname chars: [${pathname.split('').map(c => `"${c}"`).join(', ')}]`)
-    }
-    
     // Handle potential trailing slashes and normalize pathname
     const cleanPathname = pathname.replace(/\/$/, '') || '/'
-    console.log(`   🧹 Clean pathname: "${cleanPathname}"`)
     
-    // Explicit checks with debugging
-    if (link === 'Careers') {
-      const isCareerPage = pathname === '/careers' || cleanPathname === '/careers' || pathname.includes('careers')
-      console.log(`   🏢 Careers check result: ${isCareerPage}`)
-      if (isCareerPage) {
-        console.log('✅ CAREERS PAGE IS ACTIVE!')
-        return 'text-brand-red-bright border-b-2 border-brand-red-bright'
-      }
+    // Check pathname first for non-home pages
+    if (link === 'Careers' && (pathname === '/careers' || cleanPathname === '/careers' || pathname.includes('careers'))) {
+      return 'text-brand-red-bright border-b-2 border-brand-red-bright'
     }
     
-    if (link === 'Contact') {
-      const isContactPage = pathname === '/contact' || cleanPathname === '/contact' || pathname.includes('contact')
-      console.log(`   📞 Contact check result: ${isContactPage}`)
-      if (isContactPage) {
-        console.log('✅ CONTACT PAGE IS ACTIVE!')
-        return 'text-brand-red-bright border-b-2 border-brand-red-bright'
-      }
+    if (link === 'Contact' && (pathname === '/contact' || cleanPathname === '/contact' || pathname.includes('contact'))) {
+      return 'text-brand-red-bright border-b-2 border-brand-red-bright'
     }
     
     // Other page checks
@@ -466,11 +436,9 @@ export default function Navbar() {
     
     // Home page section check
     if (isHomePage && activeSection === link) {
-      console.log(`✅ Home section "${link}" is ACTIVE`)
       return 'text-brand-red-bright border-b-2 border-brand-red-bright'
     }
     
-    console.log(`❌ Link "${link}" is INACTIVE`)
     return 'text-white/60 hover:text-brand-red-300'
   }
 
