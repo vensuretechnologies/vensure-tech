@@ -222,9 +222,9 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-surface border border-purple-glow/20 rounded-lg">
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-surface border border-brand-red-glow/20 rounded-lg">
         {/* Header */}
-        <div className="sticky top-0 bg-surface border-b border-purple-glow/10 p-6">
+        <div className="sticky top-0 bg-surface border-b border-brand-red-glow/10 p-6">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="font-display font-bold text-2xl gradient-text">
@@ -258,7 +258,7 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.fullName ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.fullName ? 'border-red-500' : 'border-brand-red-glow/20'} rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors`}
                 placeholder="Enter your full name"
               />
               {errors.fullName && <p className="text-red-400 text-xs mt-1">{errors.fullName}</p>}
@@ -273,7 +273,7 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.email ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.email ? 'border-red-500' : 'border-brand-red-glow/20'} rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors`}
                 placeholder="your@email.com"
               />
               {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
@@ -290,7 +290,7 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.phone ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.phone ? 'border-red-500' : 'border-brand-red-glow/20'} rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors`}
                 placeholder="+91 9876543210"
               />
               {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
@@ -304,7 +304,7 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
                 name="position"
                 value={formData.position}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.position ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white focus:border-purple-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white [&>option]:py-2`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.position ? 'border-red-500' : 'border-brand-red-glow/20'} rounded-lg text-white focus:border-brand-red-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white [&>option]:py-2`}
               >
                 <option value="" className="bg-surface text-white">Select a position</option>
                 {jobOpenings.map(job => (
@@ -327,7 +327,7 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
                 name="experience"
                 value={formData.experience}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.experience ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white focus:border-purple-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white [&>option]:py-2`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.experience ? 'border-red-500' : 'border-brand-red-glow/20'} rounded-lg text-white focus:border-brand-red-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white [&>option]:py-2`}
               >
                 <option value="" className="bg-surface text-white">Select experience</option>
                 <option value="0-1 years" className="bg-surface text-white">0-1 years (Fresher)</option>
@@ -348,7 +348,7 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
                 name="linkedin"
                 value={formData.linkedin}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors"
                 placeholder="https://linkedin.com/in/yourprofile"
               />
             </div>
@@ -363,7 +363,7 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
               name="portfolio"
               value={formData.portfolio}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors"
+              className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors"
               placeholder="https://yourportfolio.com"
             />
           </div>
@@ -384,9 +384,9 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
               />
               <label
                 htmlFor="resume-upload"
-                className={`flex items-center gap-3 w-full px-4 py-3 bg-white/5 border ${errors.resume ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white cursor-pointer hover:border-purple-glow/60 transition-colors`}
+                className={`flex items-center gap-3 w-full px-4 py-3 bg-white/5 border ${errors.resume ? 'border-red-500' : 'border-brand-red-glow/20'} rounded-lg text-white cursor-pointer hover:border-brand-red-glow/60 transition-colors`}
               >
-                <span className="text-purple-bright">📎</span>
+                <span className="text-brand-red-bright">📎</span>
                 <span className="text-white/60">
                   {formData.resume ? formData.resume.name : 'Click to upload your resume'}
                 </span>
@@ -405,7 +405,7 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
               value={formData.message}
               onChange={handleInputChange}
               rows={4}
-              className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors resize-none"
+              className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors resize-none"
               placeholder="Tell us why you're interested in this position and what makes you a great fit..."
             />
           </div>
@@ -415,14 +415,14 @@ function ApplicationModal({ isOpen, onClose, selectedJob }: { isOpen: boolean; o
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-6 py-3 border border-purple-glow/30 text-white/70 hover:text-white hover:border-purple-glow/60 transition-colors rounded-lg font-medium"
+              className="flex-1 px-6 py-3 border border-brand-red-glow/30 text-white/70 hover:text-white hover:border-brand-red-glow/60 transition-colors rounded-lg font-medium"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 px-6 py-3 bg-purple-glow hover:bg-purple-bright text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-6 py-3 bg-brand-red-glow hover:bg-brand-red-bright text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? 'Submitting...' : 'Submit Application'}
             </button>
@@ -454,13 +454,13 @@ export default function CareersPage() {
         <Navbar />
       {/* Header */}
       <section className="relative pt-32 pb-20 px-6 lg:px-16 overflow-hidden">
-        <div className="absolute inset-0 bg-radial-purple opacity-60" />
-        <div className="absolute inset-0 bg-grid-purple bg-grid opacity-30" />
+        <div className="absolute inset-0 bg-radial-navy opacity-60" />
+        <div className="absolute inset-0 bg-grid-navy bg-grid opacity-30" />
         
         <div className="max-w-6xl mx-auto relative">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-6 h-px bg-purple-glow" />
-            <span className="font-mono text-xs tracking-[0.25em] text-purple-bright/70 uppercase">Join Our Team</span>
+            <div className="w-6 h-px bg-brand-red-glow" />
+            <span className="font-mono text-xs tracking-[0.25em] text-brand-red-bright/70 uppercase">Join Our Team</span>
           </div>
           
           <h1 className="font-display font-extrabold text-[clamp(3rem,8vw,6rem)] leading-tight mb-8">
@@ -478,14 +478,14 @@ export default function CareersPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="#openings"
-                  className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300 animate-glow-pulse"
+                  className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300 animate-glow-pulse"
                 >
                   View Openings
                   <span>↓</span>
                 </a>
                 <a 
                   href="#culture"
-                  className="inline-flex items-center gap-2 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase border border-purple-glow/30 text-white/70 hover:text-purple-bright hover:border-purple-glow/60 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase border border-brand-red-glow/30 text-white/70 hover:text-brand-red-bright hover:border-brand-red-glow/60 transition-all duration-300"
                 >
                   Learn About Us
                 </a>
@@ -493,9 +493,9 @@ export default function CareersPage() {
             </div>
             
             <div className="space-y-4">
-              <div className="bg-surface/50 backdrop-blur-sm p-6 rounded-lg border border-purple-glow/20">
+              <div className="bg-surface/50 backdrop-blur-sm p-6 rounded-lg border border-brand-red-glow/20">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-glow flex items-center justify-center text-xl">
+                  <div className="w-12 h-12 rounded-full bg-brand-red-glow flex items-center justify-center text-xl">
                     👥
                   </div>
                   <div>
@@ -505,9 +505,9 @@ export default function CareersPage() {
                 </div>
               </div>
               
-              <div className="bg-surface/50 backdrop-blur-sm p-6 rounded-lg border border-purple-glow/20">
+              <div className="bg-surface/50 backdrop-blur-sm p-6 rounded-lg border border-brand-red-glow/20">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-glow flex items-center justify-center text-xl">
+                  <div className="w-12 h-12 rounded-full bg-brand-red-glow flex items-center justify-center text-xl">
                     🚀
                   </div>
                   <div>
@@ -517,9 +517,9 @@ export default function CareersPage() {
                 </div>
               </div>
               
-              <div className="bg-surface/50 backdrop-blur-sm p-6 rounded-lg border border-purple-glow/20">
+              <div className="bg-surface/50 backdrop-blur-sm p-6 rounded-lg border border-brand-red-glow/20">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-glow flex items-center justify-center text-xl">
+                  <div className="w-12 h-12 rounded-full bg-brand-red-glow flex items-center justify-center text-xl">
                     📈
                   </div>
                   <div>
@@ -538,9 +538,9 @@ export default function CareersPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center gap-3 mb-6 justify-center">
-              <div className="w-6 h-px bg-purple-glow" />
-              <span className="font-mono text-xs tracking-[0.25em] text-purple-bright/70 uppercase">Open Positions</span>
-              <div className="w-6 h-px bg-purple-glow" />
+              <div className="w-6 h-px bg-brand-red-glow" />
+              <span className="font-mono text-xs tracking-[0.25em] text-brand-red-bright/70 uppercase">Open Positions</span>
+              <div className="w-6 h-px bg-brand-red-glow" />
             </div>
             
             <h2 className="font-display font-extrabold text-[clamp(2.5rem,5vw,4rem)] leading-tight mb-6">
@@ -554,7 +554,7 @@ export default function CareersPage() {
 
           <div className="grid gap-6">
             {jobOpenings.map((job) => (
-              <div key={job.id} className="group bg-surface border border-purple-glow/10 hover:border-purple-glow/30 rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:shadow-purple-glow/10">
+              <div key={job.id} className="group bg-surface border border-brand-red-glow/10 hover:border-brand-red-glow/30 rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:shadow-brand-red-glow/10">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   <div className="flex-1">
                     <div className="flex items-start gap-4 mb-4">
@@ -572,19 +572,19 @@ export default function CareersPage() {
                         
                         <div className="flex flex-wrap gap-4 text-sm text-white/60 mb-4">
                           <span className="flex items-center gap-1">
-                            <span className="w-1 h-1 bg-purple-glow rounded-full"></span>
+                            <span className="w-1 h-1 bg-brand-red-glow rounded-full"></span>
                             {job.department}
                           </span>
                           <span className="flex items-center gap-1">
-                            <span className="w-1 h-1 bg-purple-glow rounded-full"></span>
+                            <span className="w-1 h-1 bg-brand-red-glow rounded-full"></span>
                             {job.location}
                           </span>
                           <span className="flex items-center gap-1">
-                            <span className="w-1 h-1 bg-purple-glow rounded-full"></span>
+                            <span className="w-1 h-1 bg-brand-red-glow rounded-full"></span>
                             {job.type}
                           </span>
                           <span className="flex items-center gap-1">
-                            <span className="w-1 h-1 bg-purple-glow rounded-full"></span>
+                            <span className="w-1 h-1 bg-brand-red-glow rounded-full"></span>
                             {job.experience}
                           </span>
                         </div>
@@ -597,7 +597,7 @@ export default function CareersPage() {
                           {job.skills.map((skill) => (
                             <span 
                               key={skill}
-                              className="px-3 py-1 bg-purple-glow/10 text-purple-bright/80 text-xs font-mono tracking-wider uppercase border border-purple-glow/20 rounded group-hover:border-purple-glow/40 transition-colors duration-300"
+                              className="px-3 py-1 bg-brand-red-glow/10 text-brand-red-bright/80 text-xs font-mono tracking-wider uppercase border border-brand-red-glow/20 rounded group-hover:border-brand-red-glow/40 transition-colors duration-300"
                             >
                               {skill}
                             </span>
@@ -610,7 +610,7 @@ export default function CareersPage() {
                   <div className="lg:ml-8">
                     <button 
                       onClick={() => openModal(job)}
-                      className="w-full lg:w-auto px-8 py-3 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300 whitespace-nowrap"
+                      className="w-full lg:w-auto px-8 py-3 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300 whitespace-nowrap"
                     >
                       Apply Now
                     </button>
@@ -626,7 +626,7 @@ export default function CareersPage() {
             </p>
             <button 
               onClick={() => openModal()}
-              className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase border border-purple-glow/30 text-white/70 hover:text-purple-bright hover:border-purple-glow/60 transition-all duration-300"
+              className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase border border-brand-red-glow/30 text-white/70 hover:text-brand-red-bright hover:border-brand-red-glow/60 transition-all duration-300"
             >
               Send Your Resume
               <span>→</span>
@@ -640,9 +640,9 @@ export default function CareersPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center gap-3 mb-6 justify-center">
-              <div className="w-6 h-px bg-purple-glow" />
-              <span className="font-mono text-xs tracking-[0.25em] text-purple-bright/70 uppercase">Why Join Us</span>
-              <div className="w-6 h-px bg-purple-glow" />
+              <div className="w-6 h-px bg-brand-red-glow" />
+              <span className="font-mono text-xs tracking-[0.25em] text-brand-red-bright/70 uppercase">Why Join Us</span>
+              <div className="w-6 h-px bg-brand-red-glow" />
             </div>
             
             <h2 className="font-display font-extrabold text-[clamp(2.5rem,5vw,4rem)] leading-tight mb-6">
@@ -658,7 +658,7 @@ export default function CareersPage() {
             {benefits.map((benefit, index) => (
               <div 
                 key={index}
-                className="group bg-surface border border-purple-glow/10 hover:border-purple-glow/30 rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:shadow-purple-glow/10 text-center"
+                className="group bg-surface border border-brand-red-glow/10 hover:border-brand-red-glow/30 rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-red-glow/10 text-center"
               >
                 <div className="text-4xl mb-4">{benefit.icon}</div>
                 <h3 className="font-display font-bold text-lg text-white mb-3 group-hover:gradient-text transition-colors duration-300">
@@ -710,13 +710,13 @@ export default function CareersPage() {
             ].map((step, index) => (
               <div key={index} className="text-center">
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 mx-auto rounded-full border-2 border-purple-glow bg-surface flex items-center justify-center">
-                    <span className="font-mono text-sm font-bold text-purple-bright">
+                  <div className="w-16 h-16 mx-auto rounded-full border-2 border-brand-red-glow bg-surface flex items-center justify-center">
+                    <span className="font-mono text-sm font-bold text-brand-red-bright">
                       {step.step}
                     </span>
                   </div>
                   {index < 3 && (
-                    <div className="hidden md:block absolute top-8 left-[calc(100%+1rem)] w-[calc(100%-2rem)] h-0.5 bg-purple-glow/30"></div>
+                    <div className="hidden md:block absolute top-8 left-[calc(100%+1rem)] w-[calc(100%-2rem)] h-0.5 bg-brand-red-glow/30"></div>
                   )}
                 </div>
                 <h3 className="font-display font-bold text-lg text-white mb-3">
@@ -745,45 +745,45 @@ export default function CareersPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a 
               href="#openings"
-              className="inline-flex items-center gap-3 px-10 py-5 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300 animate-glow-pulse"
+              className="inline-flex items-center gap-3 px-10 py-5 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300 animate-glow-pulse"
             >
               Browse Open Positions
               <span>→</span>
             </a>
             <a 
               href="mailto:careers@vensuretechnologies.in?subject=General%20Career%20Inquiry"
-              className="inline-flex items-center gap-2 px-10 py-5 font-mono text-sm font-semibold tracking-[0.15em] uppercase border border-purple-glow/30 text-white/70 hover:text-purple-bright hover:border-purple-glow/60 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-5 font-mono text-sm font-semibold tracking-[0.15em] uppercase border border-brand-red-glow/30 text-white/70 hover:text-brand-red-bright hover:border-brand-red-glow/60 transition-all duration-300"
             >
               Contact HR Team
             </a>
           </div>
 
-          <div className="mt-16 pt-12 border-t border-purple-glow/10">
+          <div className="mt-16 pt-12 border-t border-brand-red-glow/10">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <h4 className="font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+                <h4 className="font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                   General Inquiries
                 </h4>
                 <a 
                   href="mailto:careers@vensuretechnologies.in"
-                  className="text-white/70 hover:text-purple-bright transition-colors"
+                  className="text-white/70 hover:text-brand-red-bright transition-colors"
                 >
                   careers@vensuretechnologies.in
                 </a>
               </div>
               <div>
-                <h4 className="font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+                <h4 className="font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                   Phone
                 </h4>
                 <a 
                   href="tel:+917799192932"
-                  className="text-white/70 hover:text-purple-bright transition-colors"
+                  className="text-white/70 hover:text-brand-red-bright transition-colors"
                 >
                   +91 7799192932
                 </a>
               </div>
               <div>
-                <h4 className="font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+                <h4 className="font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                   Response Time
                 </h4>
                 <span className="text-white/70">Within 48 hours</span>
@@ -798,7 +798,7 @@ export default function CareersPage() {
         <div className="max-w-4xl mx-auto text-center">
           <a 
             href="/"
-            className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300"
           >
             ← Back to Home
           </a>

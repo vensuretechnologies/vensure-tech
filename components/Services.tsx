@@ -50,13 +50,13 @@ export default function Services() {
       className="relative py-32 px-6 lg:px-16 bg-[#0e0e14]"
     >
       {/* Subtle top gradient */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-glow/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red-glow/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="reveal mb-4 flex items-center gap-3">
-          <div className="w-6 h-px bg-purple-glow" />
-          <span className="font-mono text-xs tracking-[0.25em] text-purple-bright/70 uppercase">What We Do</span>
+          <div className="w-6 h-px bg-brand-red-glow" />
+          <span className="font-mono text-xs tracking-[0.25em] text-brand-red-bright/70 uppercase">What We Do</span>
         </div>
 
         <div className="reveal grid md:grid-cols-2 gap-8 mb-20 items-end">
@@ -70,16 +70,16 @@ export default function Services() {
         </div>
 
         {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-purple-glow/8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-red-glow/8">
           {services.map((s, i) => (
             <div
               key={s.num}
               className={`reveal reveal-delay-${(i % 3) + 1} group relative bg-surface p-10 hover:bg-surface-2 transition-all duration-300 overflow-hidden`}
             >
               {/* Hover glow corner */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-purple-glow/0 group-hover:bg-purple-glow/8 rounded-full blur-2xl transition-all duration-500 -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-brand-red-glow/0 group-hover:bg-brand-red-glow/8 rounded-full blur-2xl transition-all duration-500 -translate-y-1/2 translate-x-1/2" />
 
-              <div className="font-display text-5xl font-extrabold text-purple-glow/8 group-hover:text-purple-glow/20 transition-colors duration-300 leading-none mb-8 select-none">
+              <div className="font-display text-5xl font-extrabold text-brand-red-glow/8 group-hover:text-brand-red-glow/20 transition-colors duration-300 leading-none mb-8 select-none">
                 {s.num}
               </div>
 
@@ -96,7 +96,7 @@ export default function Services() {
                 {s.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-[10px] tracking-widest uppercase px-2.5 py-1 border border-purple-glow/15 text-purple-bright/50 group-hover:border-purple-glow/35 group-hover:text-purple-bright transition-all duration-300"
+                    className="font-mono text-[10px] tracking-widest uppercase px-2.5 py-1 border border-brand-red-glow/15 text-brand-red-bright/50 group-hover:border-brand-red-glow/35 group-hover:text-brand-red-bright transition-all duration-300"
                   >
                     {tag}
                   </span>
@@ -104,7 +104,7 @@ export default function Services() {
               </div>
 
               {/* Arrow */}
-              <div className="absolute bottom-8 right-8 text-purple-glow opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-lg">
+              <div className="absolute bottom-8 right-8 text-brand-red-glow opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-lg">
                 ↗
               </div>
             </div>

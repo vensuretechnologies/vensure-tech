@@ -45,7 +45,7 @@ export default function Hero() {
 
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(168,85,247,${p.alpha})`
+        ctx.fillStyle = `rgba(220,38,38,${p.alpha})`
         ctx.fill()
       })
 
@@ -59,7 +59,7 @@ export default function Hero() {
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(168,85,247,${0.12 * (1 - dist/120)})`
+            ctx.strokeStyle = `rgba(220,38,38,${0.12 * (1 - dist/120)})`
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
@@ -85,47 +85,48 @@ export default function Hero() {
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
       {/* Grid overlay */}
-      <div className="absolute inset-0 z-0" style={{backgroundImage:'linear-gradient(rgba(168,85,247,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,0.05) 1px,transparent 1px)',backgroundSize:'56px 56px'}} />
+      <div className="absolute inset-0 z-0" style={{backgroundImage:'linear-gradient(rgba(220,38,38,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(220,38,38,0.05) 1px,transparent 1px)',backgroundSize:'56px 56px'}} />
 
       {/* Scan line */}
-      <div className="absolute left-0 right-0 h-px z-0 pointer-events-none" style={{background:'linear-gradient(90deg,transparent,rgba(168,85,247,0.6),transparent)',animation:'scan 8s linear infinite',top:0}} />
+      <div className="absolute left-0 right-0 h-px z-0 pointer-events-none" style={{background:'linear-gradient(90deg,transparent,rgba(220,38,38,0.6),transparent)',animation:'scan 8s linear infinite',top:0}} />
 
       {/* Glow orbs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full z-0 pointer-events-none" style={{background:'radial-gradient(circle,rgba(168,85,247,0.15) 0%,transparent 70%)',filter:'blur(40px)'}} />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full z-0 pointer-events-none" style={{background:'radial-gradient(circle,rgba(220,38,38,0.15) 0%,transparent 70%)',filter:'blur(40px)'}} />
       <div className="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full z-0 pointer-events-none" style={{background:'radial-gradient(circle,rgba(59,130,246,0.1) 0%,transparent 70%)',filter:'blur(40px)'}} />
 
       {/* Content */}
       <div className="relative z-10">
         {/* Eyebrow */}
         <div className="flex items-center gap-3 mb-8 opacity-0 animate-[fadeUp_0.7s_0.2s_forwards]" style={{animationFillMode:'forwards'}}>
-          <span className="w-8 h-px bg-purple-400" />
-          <span className="font-mono text-[0.7rem] tracking-[0.25em] uppercase text-purple-400">IT Solutions & Digital Services — Est. 2026</span>
+          <span className="w-8 h-px bg-brand-red-400" />
+          <span className="font-mono text-[0.7rem] tracking-[0.25em] uppercase text-brand-red-400">IT Solutions & Digital Services — Est. 2026</span>
         </div>
 
         {/* Title */}
-        <h1 className="font-display font-black leading-[0.88] mb-10" style={{fontSize:'clamp(3.5rem,11vw,11rem)'}}>
+        <h1 className="font-display font-black leading-[0.9] sm:leading-[0.88] mb-8 sm:mb-10 overflow-visible" style={{fontSize:'clamp(2.5rem,10vw,11rem)'}}>
           <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.4s forwards'}}>
             <span className="glitch text-white" data-text="BUILD.">BUILD.</span>
           </span>
           <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.55s forwards'}}>
-            <span style={{WebkitTextStroke:'1px rgba(168,85,247,0.7)',color:'transparent'}}>LAUNCH.</span>
+            <span className="md:hidden text-brand-red-bright" style={{textShadow:'0 0 20px rgba(220,38,38,0.8)'}}>LAUNCH.</span>
+            <span className="hidden md:block" style={{WebkitTextStroke:'2px rgba(220,38,38,0.9)',color:'rgba(220,38,38,0.1)',textShadow:'0 0 30px rgba(220,38,38,0.3)'}}>LAUNCH.</span>
           </span>
-          <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.7s forwards',color:'#a855f7',textShadow:'0 0 40px rgba(168,85,247,0.5), 0 0 80px rgba(168,85,247,0.2)'}}>
+          <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.7s forwards',color:'#DC2626',textShadow:'0 0 40px rgba(220,38,38,0.5), 0 0 80px rgba(220,38,38,0.2)'}}>
             SUPPORT.
           </span>
         </h1>
 
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 opacity-0" style={{animation:'fadeUp 0.8s 0.9s forwards'}}>
-          <p className="max-w-sm font-body text-purple-100/50 leading-relaxed font-light text-base">
+          <p className="max-w-sm font-body text-brand-navy-100/50 leading-relaxed font-light text-base">
             We design, develop, and support digital products — from high-performance websites to enterprise IT systems that keep your business running 24/7.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#services" className="flex items-center gap-3 font-mono text-[0.75rem] tracking-[0.15em] uppercase bg-purple-600 hover:bg-purple-500 text-white px-7 py-4 transition-all duration-300 hover:-translate-y-1 group" style={{boxShadow:'0 0 30px rgba(168,85,247,0.3)'}}>
+            <a href="#services" className="flex items-center gap-3 font-mono text-[0.75rem] tracking-[0.15em] uppercase bg-brand-red hover:bg-brand-red-500 text-white px-7 py-4 transition-all duration-300 hover:-translate-y-1 group" style={{boxShadow:'0 0 30px rgba(220,38,38,0.3)'}}>
               Explore Services
               <span className="group-hover:translate-x-1.5 transition-transform duration-200">→</span>
             </a>
-            <a href="#work" className="flex items-center gap-3 font-mono text-[0.75rem] tracking-[0.15em] uppercase border border-purple-500/40 text-purple-300 hover:border-purple-400 px-7 py-4 transition-all duration-300 hover:bg-purple-500/10">
+            <a href="#work" className="flex items-center gap-3 font-mono text-[0.75rem] tracking-[0.15em] uppercase border border-brand-red/40 text-brand-red-300 hover:border-brand-red-400 px-7 py-4 transition-all duration-300 hover:bg-brand-red/10">
               View Work
             </a>
           </div>
@@ -133,8 +134,8 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-0 right-0 flex flex-col items-center gap-2 opacity-0" style={{animation:'fadeIn 1s 1.3s forwards'}}>
-          <span className="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-purple-400/50 [writing-mode:vertical-rl]">Scroll</span>
-          <div className="w-px h-16" style={{background:'linear-gradient(to bottom, rgba(168,85,247,0.6), transparent)',animation:'scrollPulse 2s infinite'}} />
+          <span className="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-brand-red-400/50 [writing-mode:vertical-rl]">Scroll</span>
+          <div className="w-px h-16" style={{background:'linear-gradient(to bottom, rgba(220,38,38,0.6), transparent)',animation:'scrollPulse 2s infinite'}} />
         </div>
       </div>
 

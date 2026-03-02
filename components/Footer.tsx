@@ -30,7 +30,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-surface border-t border-purple-glow/10">
+    <footer className="relative bg-surface border-t border-brand-red-glow/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 pt-20 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand */}
@@ -46,7 +46,7 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-[10px] tracking-widest uppercase text-white/25 hover:text-purple-bright transition-colors duration-200"
+                  className="font-mono text-[10px] tracking-widest uppercase text-white/25 hover:text-brand-red-bright transition-colors duration-200"
                 >
                   {s.name}
                 </a>
@@ -55,10 +55,10 @@ export default function Footer() {
             
             {/* Contact Info */}
             <div className="space-y-2">
-              <a href="mailto:hello@vensuretechnologies.in" className="block font-mono text-xs text-white/40 hover:text-purple-bright transition-colors">
+              <a href="mailto:hello@vensuretechnologies.in" className="block font-mono text-xs text-white/40 hover:text-brand-red-bright transition-colors">
                 hello@vensuretechnologies.in
               </a>
-              <a href="tel:+917799192932" className="block font-mono text-xs text-white/40 hover:text-purple-bright transition-colors">
+              <a href="tel:+917799192932" className="block font-mono text-xs text-white/40 hover:text-brand-red-bright transition-colors">
                 +91 7799192932
               </a>
               <p className="font-mono text-xs text-white/30">
@@ -70,13 +70,13 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([col, links]) => (
             <div key={col}>
-              <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-purple-glow/60 mb-6">{col}</p>
+              <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-brand-red-glow/60 mb-6">{col}</p>
               <ul className="space-y-3">
                 {links.map((l) => (
                   <li key={l.name}>
                     <a 
                       href={l.href} 
-                      className="font-body text-sm text-white/35 hover:text-purple-bright transition-colors duration-200"
+                      className="font-body text-sm text-white/35 hover:text-brand-red-bright transition-colors duration-200"
                       target={l.href.startsWith('mailto:') ? '_self' : l.href.startsWith('#') ? '_self' : '_blank'}
                       rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     >
@@ -90,13 +90,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-purple-glow/8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-brand-red-glow/8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-mono text-[10px] tracking-wider text-white/20">
             © 2026 Vensure Technologies. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-purple-glow animate-pulse" />
-            <span className="font-mono text-[10px] tracking-wider text-purple-glow/40 uppercase">All systems operational</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-brand-red-glow animate-pulse" />
+            <span className="font-mono text-[10px] tracking-wider text-brand-red-glow/40 uppercase">All systems operational</span>
           </div>
         </div>
       </div>

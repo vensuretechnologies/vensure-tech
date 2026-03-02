@@ -47,8 +47,8 @@ export default function Cursor() {
 
   return (
     <>
-      <div ref={dotRef} className="fixed z-[9999] pointer-events-none w-3 h-3 rounded-full bg-purple-400 -translate-x-1/2 -translate-y-1/2 transition-transform duration-100" style={{boxShadow:'0 0 10px rgba(168,85,247,0.8)'}} />
-      <div ref={ringRef} className="fixed z-[9998] pointer-events-none w-10 h-10 rounded-full border border-purple-400 -translate-x-1/2 -translate-y-1/2 transition-[opacity] duration-300" style={{opacity:0.5, transition:'left 0.2s ease, top 0.2s ease, opacity 0.3s'}} />
+      <div ref={dotRef} className="fixed z-[9999] pointer-events-none w-3 h-3 rounded-full bg-brand-red-400 -translate-x-1/2 -translate-y-1/2 transition-transform duration-100" style={{boxShadow:'0 0 10px rgba(220,38,38,0.8)'}} />
+      <div ref={ringRef} className="fixed z-[9998] pointer-events-none w-10 h-10 rounded-full border border-brand-red-400 -translate-x-1/2 -translate-y-1/2 transition-[opacity] duration-300" style={{opacity:0.5, transition:'left 0.2s ease, top 0.2s ease, opacity 0.3s'}} />
     </>
   )
 }

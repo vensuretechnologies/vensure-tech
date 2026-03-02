@@ -16,11 +16,11 @@ export default function TermsPage() {
         <Navbar />
       {/* Header */}
       <section className="relative pt-32 pb-16 px-6 lg:px-16">
-        <div className="absolute inset-0 bg-radial-purple opacity-40" />
+        <div className="absolute inset-0 bg-radial-navy opacity-40" />
         <div className="max-w-4xl mx-auto relative">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-6 h-px bg-purple-glow" />
-            <span className="font-mono text-xs tracking-[0.25em] text-purple-bright/70 uppercase">Legal</span>
+            <div className="w-6 h-px bg-brand-red-glow" />
+            <span className="font-mono text-xs tracking-[0.25em] text-brand-red-bright/70 uppercase">Legal</span>
           </div>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,6vw,4rem)] leading-tight mb-6">
             Terms and Conditions
@@ -33,7 +33,7 @@ export default function TermsPage() {
 
       {/* Content */}
       <section className="px-6 lg:px-16 pb-20">
-        <div className="max-w-4xl mx-auto prose prose-invert prose-purple max-w-none">
+        <div className="max-w-4xl mx-auto prose prose-invert prose-red max-w-none">
           <div className="space-y-12 text-white/80 leading-relaxed">
             
             <div>
@@ -177,7 +177,7 @@ export default function TermsPage() {
               <p className="mb-4">
                 For questions about these Terms or our services, please contact us:
               </p>
-              <div className="bg-surface p-6 rounded-lg border border-purple-glow/20">
+              <div className="bg-surface p-6 rounded-lg border border-brand-red-glow/20">
                 <p className="mb-2"><strong>Email:</strong> hello@vensuretechnologies.in</p>
                 <p className="mb-2"><strong>Phone:</strong> +91 7799192932</p>
                 <p><strong>Response Time:</strong> Within 2 hours during business hours</p>
@@ -193,7 +193,7 @@ export default function TermsPage() {
         <div className="max-w-4xl mx-auto text-center">
           <a 
             href="/"
-            className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300"
           >
             ← Back to Home
           </a>

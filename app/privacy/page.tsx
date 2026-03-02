@@ -16,11 +16,11 @@ export default function PrivacyPage() {
         <Navbar />
       {/* Header */}
       <section className="relative pt-32 pb-16 px-6 lg:px-16">
-        <div className="absolute inset-0 bg-radial-purple opacity-40" />
+        <div className="absolute inset-0 bg-radial-navy opacity-40" />
         <div className="max-w-4xl mx-auto relative">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-6 h-px bg-purple-glow" />
-            <span className="font-mono text-xs tracking-[0.25em] text-purple-bright/70 uppercase">Legal</span>
+            <div className="w-6 h-px bg-brand-red-glow" />
+            <span className="font-mono text-xs tracking-[0.25em] text-brand-red-bright/70 uppercase">Legal</span>
           </div>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,6vw,4rem)] leading-tight mb-6">
             Privacy Policy
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
 
       {/* Content */}
       <section className="px-6 lg:px-16 pb-20">
-        <div className="max-w-4xl mx-auto prose prose-invert prose-purple max-w-none">
+        <div className="max-w-4xl mx-auto prose prose-invert prose-red max-w-none">
           <div className="space-y-12 text-white/80 leading-relaxed">
             
             <div>
@@ -137,7 +137,7 @@ export default function PrivacyPage() {
                 Enable personalized content and relevant advertising. You can opt out of these through your browser settings.
               </p>
 
-              <div className="bg-surface p-6 rounded-lg border border-purple-glow/20 mt-6">
+              <div className="bg-surface p-6 rounded-lg border border-brand-red-glow/20 mt-6">
                 <p className="font-semibold text-white mb-2">Cookie Control</p>
                 <p>You can control cookies through your browser settings. Note that disabling certain cookies may affect website functionality.</p>
               </div>
@@ -184,19 +184,19 @@ export default function PrivacyPage() {
               </p>
               
               <div className="grid md:grid-cols-2 gap-6 my-6">
-                <div className="bg-surface p-6 rounded-lg border border-purple-glow/20">
+                <div className="bg-surface p-6 rounded-lg border border-brand-red-glow/20">
                   <h4 className="font-semibold text-white mb-3">Access & Portability</h4>
                   <p className="text-sm">Request a copy of your personal data we hold and receive it in a commonly used format.</p>
                 </div>
-                <div className="bg-surface p-6 rounded-lg border border-purple-glow/20">
+                <div className="bg-surface p-6 rounded-lg border border-brand-red-glow/20">
                   <h4 className="font-semibold text-white mb-3">Correction</h4>
                   <p className="text-sm">Update or correct any inaccurate personal information we have about you.</p>
                 </div>
-                <div className="bg-surface p-6 rounded-lg border border-purple-glow/20">
+                <div className="bg-surface p-6 rounded-lg border border-brand-red-glow/20">
                   <h4 className="font-semibold text-white mb-3">Deletion</h4>
                   <p className="text-sm">Request deletion of your personal data, subject to legal and contractual obligations.</p>
                 </div>
-                <div className="bg-surface p-6 rounded-lg border border-purple-glow/20">
+                <div className="bg-surface p-6 rounded-lg border border-brand-red-glow/20">
                   <h4 className="font-semibold text-white mb-3">Opt-Out</h4>
                   <p className="text-sm">Unsubscribe from marketing communications at any time through email links or by contacting us.</p>
                 </div>
@@ -256,7 +256,7 @@ export default function PrivacyPage() {
                 For any questions about this Privacy Policy or our data practices, please contact us:
               </p>
               
-              <div className="bg-surface p-8 rounded-lg border border-purple-glow/20">
+              <div className="bg-surface p-8 rounded-lg border border-brand-red-glow/20">
                 <h4 className="font-semibold text-white mb-4 text-lg">Privacy Officer - Vensure Technologies</h4>
                 <div className="space-y-3">
                   <p><strong>Email:</strong> privacy@vensuretechnologies.in</p>
@@ -266,7 +266,7 @@ export default function PrivacyPage() {
                   <p><strong>Privacy Requests:</strong> Processed within 30 days</p>
                 </div>
                 
-                <div className="mt-6 pt-4 border-t border-purple-glow/20">
+                <div className="mt-6 pt-4 border-t border-brand-red-glow/20">
                   <p className="text-sm text-white/70">
                     We are committed to resolving any privacy concerns promptly and transparently. 
                     Your feedback helps us improve our data protection practices.
@@ -284,7 +284,7 @@ export default function PrivacyPage() {
         <div className="max-w-4xl mx-auto text-center">
           <a 
             href="/"
-            className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300"
           >
             ← Back to Home
           </a>

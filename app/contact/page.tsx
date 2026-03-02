@@ -17,13 +17,13 @@ export default function ContactPage() {
         <Navbar />
       {/* Header */}
       <section className="relative pt-32 pb-20 px-6 lg:px-16 overflow-hidden">
-        <div className="absolute inset-0 bg-radial-purple opacity-60" />
-        <div className="absolute inset-0 bg-grid-purple bg-grid opacity-30" />
+        <div className="absolute inset-0 bg-radial-navy opacity-60" />
+        <div className="absolute inset-0 bg-grid-navy bg-grid opacity-30" />
         
         <div className="max-w-6xl mx-auto relative">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-6 h-px bg-purple-glow" />
-            <span className="font-mono text-xs tracking-[0.25em] text-purple-bright/70 uppercase">Get In Touch</span>
+            <div className="w-6 h-px bg-brand-red-glow" />
+            <span className="font-mono text-xs tracking-[0.25em] text-brand-red-bright/70 uppercase">Get In Touch</span>
           </div>
           
           <h1 className="font-display font-extrabold text-[clamp(3rem,8vw,6rem)] leading-tight mb-8">
@@ -58,14 +58,14 @@ export default function ContactPage() {
               <div className="space-y-8">
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-glow/20 border border-purple-glow/30 flex items-center justify-center">
-                    <span className="text-purple-bright text-xl">📞</span>
+                  <div className="w-12 h-12 rounded-full bg-brand-red-glow/20 border border-brand-red-glow/30 flex items-center justify-center">
+                    <span className="text-brand-red-bright text-xl">📞</span>
                   </div>
                   <div>
                     <h3 className="font-display font-bold text-lg text-white mb-2">Phone</h3>
                     <a 
                       href="tel:+917799192932"
-                      className="text-purple-bright hover:text-purple-300 transition-colors text-lg"
+                      className="text-brand-red-bright hover:text-brand-red-300 transition-colors text-lg"
                     >
                       +91 7799192932
                     </a>
@@ -75,14 +75,14 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-glow/20 border border-purple-glow/30 flex items-center justify-center">
-                    <span className="text-purple-bright text-xl">✉️</span>
+                  <div className="w-12 h-12 rounded-full bg-brand-red-glow/20 border border-brand-red-glow/30 flex items-center justify-center">
+                    <span className="text-brand-red-bright text-xl">✉️</span>
                   </div>
                   <div>
                     <h3 className="font-display font-bold text-lg text-white mb-2">Email</h3>
                     <a 
                       href="mailto:hello@vensuretechnologies.in"
-                      className="text-purple-bright hover:text-purple-300 transition-colors text-lg"
+                      className="text-brand-red-bright hover:text-brand-red-300 transition-colors text-lg"
                     >
                       hello@vensuretechnologies.in
                     </a>
@@ -92,8 +92,8 @@ export default function ContactPage() {
 
                 {/* Location */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-glow/20 border border-purple-glow/30 flex items-center justify-center">
-                    <span className="text-purple-bright text-xl">📍</span>
+                  <div className="w-12 h-12 rounded-full bg-brand-red-glow/20 border border-brand-red-glow/30 flex items-center justify-center">
+                    <span className="text-brand-red-bright text-xl">📍</span>
                   </div>
                   <div>
                     <h3 className="font-display font-bold text-lg text-white mb-2">Location</h3>
@@ -104,8 +104,8 @@ export default function ContactPage() {
 
                 {/* Business Hours */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-glow/20 border border-purple-glow/30 flex items-center justify-center">
-                    <span className="text-purple-bright text-xl">⏰</span>
+                  <div className="w-12 h-12 rounded-full bg-brand-red-glow/20 border border-brand-red-glow/30 flex items-center justify-center">
+                    <span className="text-brand-red-bright text-xl">⏰</span>
                   </div>
                   <div>
                     <h3 className="font-display font-bold text-lg text-white mb-2">Business Hours</h3>
@@ -133,7 +133,7 @@ export default function ContactPage() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full bg-surface border border-purple-glow/20 hover:border-purple-glow/40 flex items-center justify-center text-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-glow/20"
+                      className="w-12 h-12 rounded-full bg-surface border border-brand-red-glow/20 hover:border-brand-red-glow/40 flex items-center justify-center text-xl transition-all duration-300 hover:shadow-lg hover:shadow-brand-red-glow/20"
                     >
                       {social.icon}
                     </a>
@@ -143,7 +143,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-surface border border-purple-glow/10 rounded-lg p-8">
+            <div className="bg-surface border border-brand-red-glow/10 rounded-lg p-8">
               <h3 className="font-display font-bold text-2xl gradient-text mb-6">
                 Send us a message
               </h3>
@@ -157,7 +157,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors"
                       placeholder="John"
                     />
                   </div>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors"
                       placeholder="Doe"
                     />
                   </div>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                   <input
                     type="email"
                     required
-                    className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors"
                     placeholder="john@company.com"
                   />
                 </div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
                   <input
                     type="tel"
                     required
-                    className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors"
                     placeholder="+91 9876543210"
                   />
                 </div>
@@ -205,7 +205,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors"
                     placeholder="Your Company Ltd."
                   />
                 </div>
@@ -214,7 +214,7 @@ export default function ContactPage() {
                   <label className="block text-white text-sm font-medium mb-2">
                     Service Interested In
                   </label>
-                  <select className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white focus:border-purple-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white">
+                  <select className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white focus:border-brand-red-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white">
                     <option value="" className="bg-surface text-white">Select a service</option>
                     <option value="web-development" className="bg-surface text-white">Website Development</option>
                     <option value="ecommerce" className="bg-surface text-white">E-commerce Solution</option>
@@ -230,7 +230,7 @@ export default function ContactPage() {
                   <label className="block text-white text-sm font-medium mb-2">
                     Project Budget
                   </label>
-                  <select className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white focus:border-purple-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white">
+                  <select className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white focus:border-brand-red-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white">
                     <option value="" className="bg-surface text-white">Select budget range</option>
                     <option value="under-50k" className="bg-surface text-white">Under ₹50,000</option>
                     <option value="50k-1l" className="bg-surface text-white">₹50,000 - ₹1,00,000</option>
@@ -247,14 +247,14 @@ export default function ContactPage() {
                   <textarea
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red-glow/60 focus:outline-none transition-colors resize-none"
                     placeholder="Tell us about your project requirements, timeline, and any specific goals you have in mind..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300 animate-glow-pulse"
+                  className="w-full px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300 animate-glow-pulse"
                 >
                   Send Message
                 </button>
@@ -278,34 +278,34 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a 
               href="tel:+917799192932"
-              className="inline-flex items-center gap-3 px-10 py-5 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300 animate-glow-pulse"
+              className="inline-flex items-center gap-3 px-10 py-5 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300 animate-glow-pulse"
             >
               📞 Call Now
             </a>
             <a 
               href="mailto:hello@vensuretechnologies.in"
-              className="inline-flex items-center gap-2 px-10 py-5 font-mono text-sm font-semibold tracking-[0.15em] uppercase border border-purple-glow/30 text-white/70 hover:text-purple-bright hover:border-purple-glow/60 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-5 font-mono text-sm font-semibold tracking-[0.15em] uppercase border border-brand-red-glow/30 text-white/70 hover:text-brand-red-bright hover:border-brand-red-glow/60 transition-all duration-300"
             >
               ✉️ Email Us
             </a>
           </div>
 
-          <div className="mt-16 pt-12 border-t border-purple-glow/10">
+          <div className="mt-16 pt-12 border-t border-brand-red-glow/10">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <h4 className="font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+                <h4 className="font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                   Response Time
                 </h4>
                 <span className="text-white/70">Within 24 hours</span>
               </div>
               <div>
-                <h4 className="font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+                <h4 className="font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                   Free Consultation
                 </h4>
                 <span className="text-white/70">Always included</span>
               </div>
               <div>
-                <h4 className="font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+                <h4 className="font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                   Support
                 </h4>
                 <span className="text-white/70">24/7 Technical assistance</span>
@@ -320,7 +320,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto text-center">
           <a 
             href="/"
-            className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300"
           >
             ← Back to Home
           </a>

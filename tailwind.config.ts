@@ -23,19 +23,49 @@ const config: Config = {
           900: '#121070',
           950: '#0e0e14',
         },
+        // Brand colors from logo
+        brand: {
+          red: {
+            DEFAULT: '#DC2626',
+            50:  '#FEF2F2',
+            100: '#FEE2E2', 
+            200: '#FECACA',
+            300: '#FCA5A5',
+            400: '#F87171',
+            500: '#EF4444',
+            600: '#DC2626',
+            700: '#B91C1C',
+            800: '#991B1B',
+            900: '#7F1D1D',
+          },
+          navy: {
+            DEFAULT: '#1E3A8A',
+            50:  '#EFF6FF',
+            100: '#DBEAFE',
+            200: '#BFDBFE',
+            300: '#93C5FD',
+            400: '#60A5FA',
+            500: '#3B82F6',
+            600: '#2563EB',
+            700: '#1D4ED8',
+            800: '#1E40AF',
+            900: '#1E3A8A',
+          }
+        },
+        // Keep backward compatibility while transitioning
         purple: {
-          glow:   '#a855f7',
-          bright: '#c084fc',
-          soft:   '#e9d5ff',
-          dim:    '#581c87',
-          dark:   '#2e1065',
+          glow:   '#DC2626',   // Now red
+          bright: '#EF4444',   // Now light red
+          soft:   '#FEE2E2',   // Now light red
+          dim:    '#991B1B',   // Now dark red
+          dark:   '#7F1D1D',   // Now darker red
         },
         surface: {
           DEFAULT: '#13131c',
           2: '#1a1a27',
           3: '#22223a',
         },
-        cyber: '#b57bee',
+        cyber: '#DC2626', // Now brand red
       },
       fontFamily: {
         display: ['var(--font-display)', 'sans-serif'],
@@ -59,8 +89,8 @@ const config: Config = {
           '50%':      { transform: 'translateY(-12px)' },
         },
         glowPulse: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(168,85,247,0.3)' },
-          '50%':      { boxShadow: '0 0 60px rgba(168,85,247,0.7), 0 0 100px rgba(168,85,247,0.3)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(220,38,38,0.3)' },
+          '50%':      { boxShadow: '0 0 60px rgba(220,38,38,0.7), 0 0 100px rgba(220,38,38,0.3)' },
         },
         scan: {
           '0%':   { transform: 'translateY(-100%)' },
@@ -68,9 +98,13 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'grid-purple': `linear-gradient(rgba(168,85,247,0.06) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(168,85,247,0.06) 1px, transparent 1px)`,
-        'radial-purple': 'radial-gradient(ellipse 70% 50% at 60% 40%, #1e0a3a 0%, #0e0e14 65%)',
+        'grid-brand': `linear-gradient(rgba(220,38,38,0.06) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(220,38,38,0.06) 1px, transparent 1px)`,
+        'radial-brand': 'radial-gradient(ellipse 70% 50% at 60% 40%, #3a1e1e 0%, #0e0e14 65%)',
+        // Keep backward compatibility
+        'grid-purple': `linear-gradient(rgba(220,38,38,0.06) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(220,38,38,0.06) 1px, transparent 1px)`,
+        'radial-purple': 'radial-gradient(ellipse 70% 50% at 60% 40%, #3a1e1e 0%, #0e0e14 65%)',
       },
       backgroundSize: {
         'grid': '56px 56px',

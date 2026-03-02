@@ -88,7 +88,7 @@ ${formData.description}
       />
       
       {/* Modal */}
-      <div className="relative bg-[#0e0e14] border border-purple-glow/20 rounded-lg p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+      <div className="relative bg-[#0e0e14] border border-brand-red-glow/20 rounded-lg p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -107,7 +107,7 @@ ${formData.description}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+              <label className="block font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                 Name *
               </label>
               <input
@@ -116,13 +116,13 @@ ${formData.description}
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className="w-full bg-[#1a1a2e] border border-purple-glow/20 rounded px-4 py-3 text-white placeholder-white/30 focus:border-purple-glow focus:outline-none transition-colors"
+                className="w-full bg-[#1a1a2e] border border-brand-red-glow/20 rounded px-4 py-3 text-white placeholder-white/30 focus:border-brand-red-glow focus:outline-none transition-colors"
                 placeholder="Your full name"
               />
             </div>
 
             <div>
-              <label className="block font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+              <label className="block font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                 Email *
               </label>
               <input
@@ -131,13 +131,13 @@ ${formData.description}
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="w-full bg-[#1a1a2e] border border-purple-glow/20 rounded px-4 py-3 text-white placeholder-white/30 focus:border-purple-glow focus:outline-none transition-colors"
+                className="w-full bg-[#1a1a2e] border border-brand-red-glow/20 rounded px-4 py-3 text-white placeholder-white/30 focus:border-brand-red-glow focus:outline-none transition-colors"
                 placeholder="your@email.com"
               />
             </div>
 
             <div>
-              <label className="block font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+              <label className="block font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                 Phone *
               </label>
               <input
@@ -146,13 +146,13 @@ ${formData.description}
                 value={formData.phone}
                 onChange={handleInputChange}
                 required
-                className="w-full bg-[#1a1a2e] border border-purple-glow/20 rounded px-4 py-3 text-white placeholder-white/30 focus:border-purple-glow focus:outline-none transition-colors"
+                className="w-full bg-[#1a1a2e] border border-brand-red-glow/20 rounded px-4 py-3 text-white placeholder-white/30 focus:border-brand-red-glow focus:outline-none transition-colors"
                 placeholder="+91 XXXXX XXXXX"
               />
             </div>
 
             <div>
-              <label className="block font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+              <label className="block font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                 Company
               </label>
               <input
@@ -160,20 +160,20 @@ ${formData.description}
                 name="company"
                 value={formData.company}
                 onChange={handleInputChange}
-                className="w-full bg-[#1a1a2e] border border-purple-glow/20 rounded px-4 py-3 text-white placeholder-white/30 focus:border-purple-glow focus:outline-none transition-colors"
+                className="w-full bg-[#1a1a2e] border border-brand-red-glow/20 rounded px-4 py-3 text-white placeholder-white/30 focus:border-brand-red-glow focus:outline-none transition-colors"
                 placeholder="Your company name"
               />
             </div>
 
             <div>
-              <label className="block font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+              <label className="block font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                 Project Type
               </label>
               <select
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleInputChange}
-                className="w-full bg-[#1a1a2e] border border-purple-glow/20 rounded px-4 py-3 text-white focus:border-purple-glow focus:outline-none transition-colors"
+                className="w-full bg-[#1a1a2e] border border-brand-red-glow/20 rounded px-4 py-3 text-white focus:border-brand-red-glow focus:outline-none transition-colors"
               >
                 <option value="">Select project type</option>
                 <option value="web-development">Web Development</option>
@@ -185,14 +185,14 @@ ${formData.description}
             </div>
 
             <div>
-              <label className="block font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+              <label className="block font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                 Budget Range
               </label>
               <select
                 name="budget"
                 value={formData.budget}
                 onChange={handleInputChange}
-                className="w-full bg-[#1a1a2e] border border-purple-glow/20 rounded px-4 py-3 text-white focus:border-purple-glow focus:outline-none transition-colors"
+                className="w-full bg-[#1a1a2e] border border-brand-red-glow/20 rounded px-4 py-3 text-white focus:border-brand-red-glow focus:outline-none transition-colors"
               >
                 <option value="">Select budget range</option>
                 <option value="under-50k">Under ₹50,000</option>
@@ -204,14 +204,14 @@ ${formData.description}
             </div>
 
             <div>
-              <label className="block font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+              <label className="block font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
                 Timeline
               </label>
               <select
                 name="timeline"
                 value={formData.timeline}
                 onChange={handleInputChange}
-                className="w-full bg-[#1a1a2e] border border-purple-glow/20 rounded px-4 py-3 text-white focus:border-purple-glow focus:outline-none transition-colors"
+                className="w-full bg-[#1a1a2e] border border-brand-red-glow/20 rounded px-4 py-3 text-white focus:border-brand-red-glow focus:outline-none transition-colors"
               >
                 <option value="">Select timeline</option>
                 <option value="asap">ASAP</option>
@@ -224,7 +224,7 @@ ${formData.description}
           </div>
 
           <div>
-            <label className="block font-mono text-xs tracking-wider uppercase text-purple-bright/70 mb-2">
+            <label className="block font-mono text-xs tracking-wider uppercase text-brand-red-bright/70 mb-2">
               Project Description *
             </label>
             <textarea
@@ -233,7 +233,7 @@ ${formData.description}
               onChange={handleInputChange}
               required
               rows={4}
-              className="w-full bg-[#1a1a2e] border border-purple-glow/20 rounded px-4 py-3 text-white placeholder-white/30 focus:border-purple-glow focus:outline-none transition-colors resize-none"
+              className="w-full bg-[#1a1a2e] border border-brand-red-glow/20 rounded px-4 py-3 text-white placeholder-white/30 focus:border-brand-red-glow focus:outline-none transition-colors resize-none"
               placeholder="Tell us about your project, features you need, any specific requirements..."
             />
           </div>
@@ -242,7 +242,7 @@ ${formData.description}
           <div className="flex gap-4 pt-4">
             <button
               type="submit"
-              className="flex-1 group inline-flex items-center justify-center gap-3 px-8 py-4 font-body text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300 animate-glow-pulse"
+              className="flex-1 group inline-flex items-center justify-center gap-3 px-8 py-4 font-body text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300 animate-glow-pulse"
             >
               Send Project Details
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -250,7 +250,7 @@ ${formData.description}
             <button
               type="button"
               onClick={onClose}
-              className="px-8 py-4 font-body text-sm font-semibold tracking-widest uppercase border border-purple-glow/30 text-white/50 hover:text-purple-bright hover:border-purple-glow/60 transition-all duration-300"
+              className="px-8 py-4 font-body text-sm font-semibold tracking-widest uppercase border border-brand-red-glow/30 text-white/50 hover:text-brand-red-bright hover:border-brand-red-glow/60 transition-all duration-300"
             >
               Cancel
             </button>

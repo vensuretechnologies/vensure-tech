@@ -16,11 +16,11 @@ export default function CookiePage() {
         <Navbar />
       {/* Header */}
       <section className="relative pt-32 pb-16 px-6 lg:px-16">
-        <div className="absolute inset-0 bg-radial-purple opacity-40" />
+        <div className="absolute inset-0 bg-radial-navy opacity-40" />
         <div className="max-w-4xl mx-auto relative">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-6 h-px bg-purple-glow" />
-            <span className="font-mono text-xs tracking-[0.25em] text-purple-bright/70 uppercase">Legal</span>
+            <div className="w-6 h-px bg-brand-red-glow" />
+            <span className="font-mono text-xs tracking-[0.25em] text-brand-red-bright/70 uppercase">Legal</span>
           </div>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,6vw,4rem)] leading-tight mb-6">
             Cookie Policy
@@ -33,7 +33,7 @@ export default function CookiePage() {
 
       {/* Content */}
       <section className="px-6 lg:px-16 pb-20">
-        <div className="max-w-4xl mx-auto prose prose-invert prose-purple max-w-none">
+        <div className="max-w-4xl mx-auto prose prose-invert prose-red max-w-none">
           <div className="space-y-12 text-white/80 leading-relaxed">
             
             <div>
@@ -50,7 +50,7 @@ export default function CookiePage() {
               <h2 className="font-display font-bold text-2xl text-white mb-6">Types of Cookies We Use</h2>
               
               <div className="space-y-8">
-                <div className="bg-surface p-6 rounded-lg border border-purple-glow/20">
+                <div className="bg-surface p-6 rounded-lg border border-brand-red-glow/20">
                   <h3 className="font-display font-semibold text-xl text-white mb-4">Essential Cookies</h3>
                   <p className="mb-4">
                     These cookies are necessary for our website to function properly. They cannot be switched off in our systems.
@@ -62,10 +62,10 @@ export default function CookiePage() {
                     <li>Load balancing and performance optimization</li>
                     <li>Basic website functionality</li>
                   </ul>
-                  <p className="text-sm text-purple-bright mt-4"><strong>Duration:</strong> Session or up to 1 year</p>
+                  <p className="text-sm text-brand-red-bright mt-4"><strong>Duration:</strong> Session or up to 1 year</p>
                 </div>
 
-                <div className="bg-surface p-6 rounded-lg border border-purple-glow/20">
+                <div className="bg-surface p-6 rounded-lg border border-brand-red-glow/20">
                   <h3 className="font-display font-semibold text-xl text-white mb-4">Analytics Cookies</h3>
                   <p className="mb-4">
                     These cookies help us understand how visitors interact with our website by collecting and reporting information.
@@ -77,10 +77,10 @@ export default function CookiePage() {
                     <li>User behavior insights</li>
                     <li>Feature usage statistics</li>
                   </ul>
-                  <p className="text-sm text-purple-bright mt-4"><strong>Duration:</strong> Up to 26 months</p>
+                  <p className="text-sm text-brand-red-bright mt-4"><strong>Duration:</strong> Up to 26 months</p>
                 </div>
 
-                <div className="bg-surface p-6 rounded-lg border border-purple-glow/20">
+                <div className="bg-surface p-6 rounded-lg border border-brand-red-glow/20">
                   <h3 className="font-display font-semibold text-xl text-white mb-4">Functional Cookies</h3>
                   <p className="mb-4">
                     These cookies enable enhanced functionality and personalization, such as remembering your preferences.
@@ -92,10 +92,10 @@ export default function CookiePage() {
                     <li>Form auto-completion</li>
                     <li>Communication preferences</li>
                   </ul>
-                  <p className="text-sm text-purple-bright mt-4"><strong>Duration:</strong> Up to 1 year</p>
+                  <p className="text-sm text-brand-red-bright mt-4"><strong>Duration:</strong> Up to 1 year</p>
                 </div>
 
-                <div className="bg-surface p-6 rounded-lg border border-purple-glow/20">
+                <div className="bg-surface p-6 rounded-lg border border-brand-red-glow/20">
                   <h3 className="font-display font-semibold text-xl text-white mb-4">Marketing Cookies</h3>
                   <p className="mb-4">
                     These cookies track your online activity to help advertisers deliver more relevant advertising or to limit how many times you see an ad.
@@ -107,7 +107,7 @@ export default function CookiePage() {
                     <li>Social media integration</li>
                     <li>Marketing campaign effectiveness</li>
                   </ul>
-                  <p className="text-sm text-purple-bright mt-4"><strong>Duration:</strong> Up to 2 years</p>
+                  <p className="text-sm text-brand-red-bright mt-4"><strong>Duration:</strong> Up to 2 years</p>
                 </div>
               </div>
             </div>
@@ -119,29 +119,29 @@ export default function CookiePage() {
               </p>
               
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-purple-glow/20">
+                <table className="w-full border-collapse border border-brand-red-glow/20">
                   <thead>
                     <tr className="bg-surface">
-                      <th className="border border-purple-glow/20 px-4 py-3 text-left">Service</th>
-                      <th className="border border-purple-glow/20 px-4 py-3 text-left">Purpose</th>
-                      <th className="border border-purple-glow/20 px-4 py-3 text-left">Duration</th>
+                      <th className="border border-brand-red-glow/20 px-4 py-3 text-left">Service</th>
+                      <th className="border border-brand-red-glow/20 px-4 py-3 text-left">Purpose</th>
+                      <th className="border border-brand-red-glow/20 px-4 py-3 text-left">Duration</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-purple-glow/20 px-4 py-3">Google Analytics</td>
-                      <td className="border border-purple-glow/20 px-4 py-3">Website analytics and performance monitoring</td>
-                      <td className="border border-purple-glow/20 px-4 py-3">26 months</td>
+                      <td className="border border-brand-red-glow/20 px-4 py-3">Google Analytics</td>
+                      <td className="border border-brand-red-glow/20 px-4 py-3">Website analytics and performance monitoring</td>
+                      <td className="border border-brand-red-glow/20 px-4 py-3">26 months</td>
                     </tr>
                     <tr className="bg-surface/50">
-                      <td className="border border-purple-glow/20 px-4 py-3">Social Media Widgets</td>
-                      <td className="border border-purple-glow/20 px-4 py-3">Social sharing and integration features</td>
-                      <td className="border border-purple-glow/20 px-4 py-3">Varies</td>
+                      <td className="border border-brand-red-glow/20 px-4 py-3">Social Media Widgets</td>
+                      <td className="border border-brand-red-glow/20 px-4 py-3">Social sharing and integration features</td>
+                      <td className="border border-brand-red-glow/20 px-4 py-3">Varies</td>
                     </tr>
                     <tr>
-                      <td className="border border-purple-glow/20 px-4 py-3">Email Marketing</td>
-                      <td className="border border-purple-glow/20 px-4 py-3">Newsletter and communication tracking</td>
-                      <td className="border border-purple-glow/20 px-4 py-3">2 years</td>
+                      <td className="border border-brand-red-glow/20 px-4 py-3">Email Marketing</td>
+                      <td className="border border-brand-red-glow/20 px-4 py-3">Newsletter and communication tracking</td>
+                      <td className="border border-brand-red-glow/20 px-4 py-3">2 years</td>
                     </tr>
                   </tbody>
                 </table>
@@ -157,19 +157,19 @@ export default function CookiePage() {
               </p>
               
               <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <div className="bg-surface p-4 rounded border border-purple-glow/20">
+                <div className="bg-surface p-4 rounded border border-brand-red-glow/20">
                   <h4 className="font-semibold text-white mb-2">Chrome</h4>
                   <p className="text-sm">Settings &gt; Privacy and Security &gt; Cookies and other site data</p>
                 </div>
-                <div className="bg-surface p-4 rounded border border-purple-glow/20">
+                <div className="bg-surface p-4 rounded border border-brand-red-glow/20">
                   <h4 className="font-semibold text-white mb-2">Firefox</h4>
                   <p className="text-sm">Options &gt; Privacy &amp; Security &gt; Cookies and Site Data</p>
                 </div>
-                <div className="bg-surface p-4 rounded border border-purple-glow/20">
+                <div className="bg-surface p-4 rounded border border-brand-red-glow/20">
                   <h4 className="font-semibold text-white mb-2">Safari</h4>
                   <p className="text-sm">Preferences &gt; Privacy &gt; Cookies and website data</p>
                 </div>
-                <div className="bg-surface p-4 rounded border border-purple-glow/20">
+                <div className="bg-surface p-4 rounded border border-brand-red-glow/20">
                   <h4 className="font-semibold text-white mb-2">Edge</h4>
                   <p className="text-sm">Settings &gt; Cookies and site permissions &gt; Cookies and site data</p>
                 </div>
@@ -240,7 +240,7 @@ export default function CookiePage() {
                 If you have any questions about our use of cookies or this policy:
               </p>
               
-              <div className="bg-surface p-8 rounded-lg border border-purple-glow/20">
+              <div className="bg-surface p-8 rounded-lg border border-brand-red-glow/20">
                 <h4 className="font-semibold text-white mb-4 text-lg">Cookie Questions - Vensure Technologies</h4>
                 <div className="space-y-3">
                   <p><strong>Email:</strong> privacy@vensuretechnologies.in</p>
@@ -249,7 +249,7 @@ export default function CookiePage() {
                   <p><strong>Response Time:</strong> Within 2 hours during business hours</p>
                 </div>
                 
-                <div className="mt-6 pt-4 border-t border-purple-glow/20">
+                <div className="mt-6 pt-4 border-t border-brand-red-glow/20">
                   <p className="text-sm text-white/70">
                     We're committed to transparency about our cookie practices and will gladly help you understand 
                     or modify your cookie preferences.
@@ -269,13 +269,13 @@ export default function CookiePage() {
           <div className="flex flex-wrap justify-center gap-4">
             <a 
               href="/privacy"
-              className="inline-flex items-center gap-2 px-6 py-3 font-mono text-sm font-semibold tracking-[0.1em] uppercase border border-purple-glow/30 text-white/70 hover:text-purple-bright hover:border-purple-glow/60 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 font-mono text-sm font-semibold tracking-[0.1em] uppercase border border-brand-red-glow/30 text-white/70 hover:text-brand-red-bright hover:border-brand-red-glow/60 transition-all duration-300"
             >
               Privacy Policy
             </a>
             <a 
               href="/terms"
-              className="inline-flex items-center gap-2 px-6 py-3 font-mono text-sm font-semibold tracking-[0.1em] uppercase border border-purple-glow/30 text-white/70 hover:text-purple-bright hover:border-purple-glow/60 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 font-mono text-sm font-semibold tracking-[0.1em] uppercase border border-brand-red-glow/30 text-white/70 hover:text-brand-red-bright hover:border-brand-red-glow/60 transition-all duration-300"
             >
               Terms & Conditions
             </a>
@@ -288,7 +288,7 @@ export default function CookiePage() {
         <div className="max-w-4xl mx-auto text-center">
           <a 
             href="/"
-            className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-purple-glow text-white hover:bg-purple-bright transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 font-mono text-sm font-semibold tracking-[0.15em] uppercase bg-brand-red-glow text-white hover:bg-brand-red-bright transition-all duration-300"
           >
             ← Back to Home
           </a>

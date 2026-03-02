@@ -7,6 +7,16 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Allow cross-origin requests from local network devices during development
+  allowedDevOrigins: [
+    '192.168.1.42',
+    '192.168.1.*',
+    '192.168.*.*',
+    '10.*.*.*',
+    '172.16.*.*',
+    'localhost',
+    '127.0.0.1',
+  ],
   // SEO and performance
   compress: true,
   poweredByHeader: false,

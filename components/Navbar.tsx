@@ -86,9 +86,9 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-surface border border-purple-glow/20 rounded-lg">
+      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-surface border border-brand-red/20 rounded-lg">
         {/* Header */}
-        <div className="sticky top-0 bg-surface border-b border-purple-glow/10 p-6">
+        <div className="sticky top-0 bg-surface border-b border-brand-red/10 p-6">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="font-display font-bold text-2xl gradient-text">
@@ -122,7 +122,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-white/5 border ${errors.firstName ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors`}
+                  className={`w-full px-4 py-3 bg-white/5 border ${errors.firstName ? 'border-red-500' : 'border-brand-red/20'} rounded-lg text-white placeholder-white/40 focus:border-brand-red/60 focus:outline-none transition-colors`}
                   placeholder="John"
                 />
                 {errors.firstName && <p className="text-red-400 text-xs mt-1">{errors.firstName}</p>}
@@ -137,7 +137,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-white/5 border ${errors.lastName ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors`}
+                  className={`w-full px-4 py-3 bg-white/5 border ${errors.lastName ? 'border-red-500' : 'border-brand-red/20'} rounded-lg text-white placeholder-white/40 focus:border-brand-red/60 focus:outline-none transition-colors`}
                   placeholder="Doe"
                 />
                 {errors.lastName && <p className="text-red-400 text-xs mt-1">{errors.lastName}</p>}
@@ -155,7 +155,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.email ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.email ? 'border-red-500' : 'border-brand-red/20'} rounded-lg text-white placeholder-white/40 focus:border-brand-red/60 focus:outline-none transition-colors`}
                 placeholder="john@company.com"
               />
               {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
@@ -170,7 +170,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.phone ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.phone ? 'border-red-500' : 'border-brand-red/20'} rounded-lg text-white placeholder-white/40 focus:border-brand-red/60 focus:outline-none transition-colors`}
                 placeholder="+91 9876543210"
               />
               {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
@@ -190,7 +190,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   name="company"
                   value={formData.company}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-white/5 border border-brand-red/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red/60 focus:outline-none transition-colors"
                   placeholder="Your Company Ltd."
                 />
               </div>
@@ -203,7 +203,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   name="industry"
                   value={formData.industry}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white focus:border-purple-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white"
+                  className="w-full px-4 py-3 bg-white/5 border border-brand-red-glow/20 rounded-lg text-white focus:border-brand-red-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white"
                 >
                   <option value="" className="bg-surface text-white">Select industry</option>
                   <option value="technology" className="bg-surface text-white">Technology</option>
@@ -231,7 +231,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   name="serviceType"
                   value={formData.serviceType}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-white/5 border ${errors.serviceType ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white focus:border-purple-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white`}
+                  className={`w-full px-4 py-3 bg-white/5 border ${errors.serviceType ? 'border-red-500' : 'border-brand-red/20'} rounded-lg text-white focus:border-brand-red/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white`}
                 >
                   <option value="" className="bg-surface text-white">Select a service</option>
                   <option value="website-development" className="bg-surface text-white">Website Development</option>
@@ -254,7 +254,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                     name="projectTimeline"
                     value={formData.projectTimeline}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white focus:border-purple-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white"
+                    className="w-full px-4 py-3 bg-white/5 border border-brand-red/20 rounded-lg text-white focus:border-brand-red/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white"
                   >
                     <option value="" className="bg-surface text-white">Select timeline</option>
                     <option value="asap" className="bg-surface text-white">ASAP (Rush project)</option>
@@ -274,7 +274,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white focus:border-purple-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white"
+                    className="w-full px-4 py-3 bg-white/5 border border-brand-red/20 rounded-lg text-white focus:border-brand-red/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white"
                   >
                     <option value="" className="bg-surface text-white">Select budget</option>
                     <option value="under-1l" className="bg-surface text-white">Under ₹1,00,000</option>
@@ -300,7 +300,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 name="preferredTime"
                 value={formData.preferredTime}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.preferredTime ? 'border-red-500' : 'border-purple-glow/20'} rounded-lg text-white focus:border-purple-glow/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.preferredTime ? 'border-red-500' : 'border-brand-red/20'} rounded-lg text-white focus:border-brand-red/60 focus:outline-none transition-colors [&>option]:bg-surface [&>option]:text-white`}
               >
                 <option value="" className="bg-surface text-white">Select preferred time</option>
                 <option value="morning-9-12" className="bg-surface text-white">Morning (9:00 AM - 12:00 PM)</option>
@@ -322,7 +322,7 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               value={formData.message}
               onChange={handleInputChange}
               rows={4}
-              className="w-full px-4 py-3 bg-white/5 border border-purple-glow/20 rounded-lg text-white placeholder-white/40 focus:border-purple-glow/60 focus:outline-none transition-colors resize-none"
+              className="w-full px-4 py-3 bg-white/5 border border-brand-red/20 rounded-lg text-white placeholder-white/40 focus:border-brand-red/60 focus:outline-none transition-colors resize-none"
               placeholder="Describe your project goals, challenges, and what you hope to achieve..."
             />
           </div>
@@ -332,14 +332,14 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-6 py-3 border border-purple-glow/30 text-white/70 hover:text-white hover:border-purple-glow/60 transition-colors rounded-lg font-medium"
+              className="flex-1 px-6 py-3 border border-brand-red/30 text-white/70 hover:text-white hover:border-brand-red/60 transition-colors rounded-lg font-medium"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 px-6 py-3 bg-purple-glow hover:bg-purple-bright text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-6 py-3 bg-brand-red hover:bg-brand-red-bright text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? 'Booking...' : 'Book Free Consultation'}
             </button>
@@ -417,8 +417,8 @@ export default function Navbar() {
       (link === 'Cookies' && pathname === '/cookies')
     
     return isActive 
-      ? 'text-purple-bright border-b-2 border-purple-bright' 
-      : 'text-purple-200/60 hover:text-purple-300'
+      ? 'text-brand-red-bright border-b-2 border-brand-red-bright' 
+      : 'text-white/60 hover:text-brand-red-300'
   }
 
   const getActiveMobileLinkClass = (link: string) => {
@@ -431,8 +431,8 @@ export default function Navbar() {
       (link === 'Cookies' && pathname === '/cookies')
     
     return isActive 
-      ? 'text-purple-bright font-bold' 
-      : 'text-purple-200/80 hover:text-purple-300'
+      ? 'text-brand-red-bright font-bold' 
+      : 'text-white/80 hover:text-brand-red-300'
   }
 
   useEffect(() => {
@@ -445,7 +445,7 @@ export default function Navbar() {
   }, [mobileMenuOpen])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-8 md:px-16 py-4 sm:py-6 transition-all duration-500 ${scrolled ? 'bg-[#0e0e14]/80 backdrop-blur-xl border-b border-purple-900/30' : ''}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-8 md:px-16 py-4 sm:py-6 transition-all duration-500 ${scrolled ? 'bg-[#0e0e14]/80 backdrop-blur-xl border-b border-brand-navy/30' : ''}`}>
       {/* Logo */}
       <a 
         href={isHomePage ? "#" : "/"} 
@@ -458,8 +458,8 @@ export default function Navbar() {
         }}
       >
         <div className="w-8 h-8 relative">
-          <div className="absolute inset-0 border border-purple-500/60 rotate-45 group-hover:rotate-[50deg] transition-transform duration-300" />
-          <div className="absolute inset-[6px] bg-purple-500/80 rotate-45 group-hover:rotate-[55deg] transition-transform duration-300" style={{boxShadow:'0 0 12px rgba(168,85,247,0.6)'}} />
+          <div className="absolute inset-0 border border-brand-red/60 rotate-45 group-hover:rotate-[50deg] transition-transform duration-300" />
+          <div className="absolute inset-[6px] bg-brand-red/80 rotate-45 group-hover:rotate-[55deg] transition-transform duration-300" style={{boxShadow:'0 0 12px rgba(220,38,38,0.6)'}} />
         </div>
         <span className="font-display text-sm sm:text-base tracking-[0.15em] text-white font-bold">VENSURE TECHNOLOGIES</span>
       </a>
@@ -477,15 +477,15 @@ export default function Navbar() {
               onClick={l === 'Home' && isHomePage ? (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) } : undefined}
                className={`font-mono text-[0.7rem] tracking-[0.2em] uppercase transition-colors duration-200 relative group ${getActiveLinkClass(l)}`}>
               {l}
-              <span className={`absolute -bottom-1 left-0 w-0 h-px bg-purple-400 group-hover:w-full transition-all duration-300 ${getActiveLinkClass(l).includes('text-purple-bright') ? 'hidden' : ''}`} />
+              <span className={`absolute -bottom-1 left-0 w-0 h-px bg-brand-red-400 group-hover:w-full transition-all duration-300 ${getActiveLinkClass(l).includes('text-brand-red-bright') ? 'hidden' : ''}`} />
             </a>
           </li>
         ))}
       </ul>
 
       {/* Desktop CTA */}
-      <button onClick={() => setConsultationModalOpen(true)} className="hidden md:flex items-center gap-2 font-mono text-[0.7rem] tracking-[0.15em] uppercase text-purple-300 border border-purple-500/50 px-5 py-2.5 hover:bg-purple-500/10 hover:border-purple-400 transition-all duration-300" style={{boxShadow:'0 0 20px rgba(168,85,247,0.1)'}}>
-        <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+      <button onClick={() => setConsultationModalOpen(true)} className="hidden md:flex items-center gap-2 font-mono text-[0.7rem] tracking-[0.15em] uppercase text-brand-red-300 border border-brand-red/50 px-5 py-2.5 hover:bg-brand-red/10 hover:border-brand-red-400 transition-all duration-300" style={{boxShadow:'0 0 20px rgba(220,38,38,0.1)'}}>
+        <span className="w-1.5 h-1.5 rounded-full bg-brand-red-400 animate-pulse" />
         Get Started
       </button>
 
@@ -496,9 +496,9 @@ export default function Navbar() {
         aria-label="Toggle menu"
         aria-expanded={mobileMenuOpen}
       >
-        <span className={`w-6 h-0.5 bg-purple-300 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-        <span className={`w-6 h-0.5 bg-purple-300 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
-        <span className={`w-6 h-0.5 bg-purple-300 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+        <span className={`w-6 h-0.5 bg-brand-red-300 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+        <span className={`w-6 h-0.5 bg-brand-red-300 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+        <span className={`w-6 h-0.5 bg-brand-red-300 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
       </button>
 
       {/* Mobile menu overlay */}
@@ -522,7 +522,7 @@ export default function Navbar() {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                   }}
-                  className={`font-mono text-xl sm:text-2xl tracking-[0.2em] uppercase transition-all duration-200 py-3 px-4 rounded-lg text-center w-full touch-manipulation ${getActiveMobileLinkClass(l)} hover:bg-purple-500/10`}
+                  className={`font-mono text-xl sm:text-2xl tracking-[0.2em] uppercase transition-all duration-200 py-3 px-4 rounded-lg text-center w-full touch-manipulation ${getActiveMobileLinkClass(l)} hover:bg-brand-red/10`}
                 >
                   {l}
                 </a>
@@ -532,8 +532,8 @@ export default function Navbar() {
                   setMobileMenuOpen(false)
                   setConsultationModalOpen(true)
                 }}
-                className="flex items-center justify-center gap-3 font-mono text-base tracking-[0.15em] uppercase text-white bg-purple-600 border border-purple-500 px-8 py-4 rounded-lg hover:bg-purple-700 active:bg-purple-800 transition-all duration-300 mt-6 w-full touch-manipulation"
-                style={{boxShadow:'0 0 20px rgba(168,85,247,0.3)'}}
+                className="flex items-center justify-center gap-3 font-mono text-base tracking-[0.15em] uppercase text-white bg-brand-red border border-brand-red-500 px-8 py-4 rounded-lg hover:bg-brand-red-700 active:bg-brand-red-800 transition-all duration-300 mt-6 w-full touch-manipulation"
+                style={{boxShadow:'0 0 20px rgba(220,38,38,0.3)'}}
               >
                 <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                 Get Started
@@ -543,7 +543,7 @@ export default function Navbar() {
             {/* Close menu area */}
             <button 
               onClick={() => setMobileMenuOpen(false)}
-              className="absolute top-6 right-6 w-11 h-11 flex items-center justify-center text-purple-300 hover:text-white transition-colors touch-manipulation"
+              className="absolute top-6 right-6 w-11 h-11 flex items-center justify-center text-brand-red-300 hover:text-white transition-colors touch-manipulation"
               aria-label="Close menu"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
