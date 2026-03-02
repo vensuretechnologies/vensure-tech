@@ -463,7 +463,7 @@ export default function CareersPage() {
             <span className="font-mono text-xs tracking-[0.25em] text-brand-red-bright/70 uppercase">Join Our Team</span>
           </div>
           
-          <h1 className="font-display font-extrabold text-[clamp(3rem,8vw,6rem)] leading-tight mb-8">
+          <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight mb-8">
             Build the Future of{' '}
             <span className="gradient-text">IT Solutions</span>
           </h1>

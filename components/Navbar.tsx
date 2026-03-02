@@ -85,7 +85,16 @@ function ConsultationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" style={{
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      width: '100vw',
+      height: '100vh'
+    }}>
       <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-surface border border-brand-red/20 rounded-lg">
         {/* Header */}
         <div className="sticky top-0 bg-surface border-b border-brand-red/10 p-6">
@@ -408,31 +417,79 @@ export default function Navbar() {
   }, [isHomePage])
 
   const getActiveLinkClass = (link: string) => {
-    const isActive = 
-      (isHomePage && activeSection === link) ||
-      (link === 'Careers' && pathname === '/careers') ||
-      (link === 'Contact' && pathname === '/contact') ||
-      (link === 'Privacy' && pathname === '/privacy') ||
-      (link === 'Terms' && pathname === '/terms') ||
-      (link === 'Cookies' && pathname === '/cookies')
+    // Comprehensive debugging
+    console.log('🔍 FULL DEBUG INFO:')
+    console.log(`   Link: "${link}"`)
+    console.log(`   Pathname: "${pathname}"`)
+    console.log(`   Pathname length: ${pathname.length}`)
+    console.log(`   Pathname type: ${typeof pathname}`)
+    console.log(`   IsHomePage: ${isHomePage}`)
+    console.log(`   ActiveSection: "${activeSection}"`)
     
-    return isActive 
-      ? 'text-brand-red-bright border-b-2 border-brand-red-bright' 
-      : 'text-white/60 hover:text-brand-red-300'
+    // Check each condition explicitly
+    if (link === 'Careers') {
+      console.log(`   🎯 Checking Careers: pathname === '/careers' ? ${pathname === '/careers'}`)
+      console.log(`   🎯 Pathname chars: [${pathname.split('').map(c => `"${c}"`).join(', ')}]`)
+    }
+    if (link === 'Contact') {
+      console.log(`   🎯 Checking Contact: pathname === '/contact' ? ${pathname === '/contact'}`)
+      console.log(`   🎯 Pathname chars: [${pathname.split('').map(c => `"${c}"`).join(', ')}]`)
+    }
+    
+    // Handle potential trailing slashes and normalize pathname
+    const cleanPathname = pathname.replace(/\/$/, '') || '/'
+    console.log(`   🧹 Clean pathname: "${cleanPathname}"`)
+    
+    // Explicit checks with debugging
+    if (link === 'Careers') {
+      const isCareerPage = pathname === '/careers' || cleanPathname === '/careers' || pathname.includes('careers')
+      console.log(`   🏢 Careers check result: ${isCareerPage}`)
+      if (isCareerPage) {
+        console.log('✅ CAREERS PAGE IS ACTIVE!')
+        return 'text-brand-red-bright border-b-2 border-brand-red-bright'
+      }
+    }
+    
+    if (link === 'Contact') {
+      const isContactPage = pathname === '/contact' || cleanPathname === '/contact' || pathname.includes('contact')
+      console.log(`   📞 Contact check result: ${isContactPage}`)
+      if (isContactPage) {
+        console.log('✅ CONTACT PAGE IS ACTIVE!')
+        return 'text-brand-red-bright border-b-2 border-brand-red-bright'
+      }
+    }
+    
+    // Other page checks
+    if (link === 'Privacy' && (pathname === '/privacy' || cleanPathname === '/privacy')) return 'text-brand-red-bright border-b-2 border-brand-red-bright'
+    if (link === 'Terms' && (pathname === '/terms' || cleanPathname === '/terms')) return 'text-brand-red-bright border-b-2 border-brand-red-bright'
+    if (link === 'Cookies' && (pathname === '/cookies' || cleanPathname === '/cookies')) return 'text-brand-red-bright border-b-2 border-brand-red-bright'
+    
+    // Home page section check
+    if (isHomePage && activeSection === link) {
+      console.log(`✅ Home section "${link}" is ACTIVE`)
+      return 'text-brand-red-bright border-b-2 border-brand-red-bright'
+    }
+    
+    console.log(`❌ Link "${link}" is INACTIVE`)
+    return 'text-white/60 hover:text-brand-red-300'
   }
 
   const getActiveMobileLinkClass = (link: string) => {
-    const isActive = 
-      (isHomePage && activeSection === link) ||
-      (link === 'Careers' && pathname === '/careers') ||
-      (link === 'Contact' && pathname === '/contact') ||
-      (link === 'Privacy' && pathname === '/privacy') ||
-      (link === 'Terms' && pathname === '/terms') ||
-      (link === 'Cookies' && pathname === '/cookies')
+    // Handle potential trailing slashes
+    const cleanPathname = pathname.replace(/\/$/, '') || '/'
     
-    return isActive 
-      ? 'text-brand-red-bright font-bold' 
-      : 'text-white/80 hover:text-brand-red-300'
+    // Check pathname first for non-home pages
+    if (link === 'Careers' && (pathname === '/careers' || cleanPathname === '/careers')) return 'text-brand-red-bright font-bold'
+    if (link === 'Contact' && (pathname === '/contact' || cleanPathname === '/contact')) return 'text-brand-red-bright font-bold'
+    if (link === 'Privacy' && (pathname === '/privacy' || cleanPathname === '/privacy')) return 'text-brand-red-bright font-bold'
+    if (link === 'Terms' && (pathname === '/terms' || cleanPathname === '/terms')) return 'text-brand-red-bright font-bold'
+    if (link === 'Cookies' && (pathname === '/cookies' || cleanPathname === '/cookies')) return 'text-brand-red-bright font-bold'
+    
+    // Then check home page sections
+    if (isHomePage && activeSection === link) return 'text-brand-red-bright font-bold'
+    
+    // Default inactive state
+    return 'text-white/80 hover:text-brand-red-300'
   }
 
   useEffect(() => {
@@ -458,7 +515,7 @@ export default function Navbar() {
         }}
       >
         <div className="w-8 h-8 relative">
-          <div className="absolute inset-0 border border-brand-red/60 rotate-45 group-hover:rotate-[50deg] transition-transform duration-300" />
+          {/* <div className="absolute inset-0 border border-brand-red/60 rotate-45 group-hover:rotate-[50deg] transition-transform duration-300" /> */}
           <div className="absolute inset-[6px] bg-brand-red/80 rotate-45 group-hover:rotate-[55deg] transition-transform duration-300" style={{boxShadow:'0 0 12px rgba(220,38,38,0.6)'}} />
         </div>
         <span className="font-display text-sm sm:text-base tracking-[0.15em] text-white font-bold">VENSURE TECHNOLOGIES</span>
@@ -474,7 +531,25 @@ export default function Navbar() {
                 l === 'Contact' ? '/contact' :
                 isHomePage ? `#${l.toLowerCase()}` : `/#${l.toLowerCase()}`
               }
-              onClick={l === 'Home' && isHomePage ? (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) } : undefined}
+              onClick={l === 'Home' && isHomePage ? (e) => { 
+                e.preventDefault(); 
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Wait for scroll to complete, then reset any anchor state
+                setTimeout(() => {
+                  window.history.replaceState(null, '', window.location.pathname);
+                }, 500);
+              } : (e) => {
+                // For other navigation links, ensure smooth scrolling
+                if (isHomePage && !['Careers', 'Contact'].includes(l)) {
+                  e.preventDefault();
+                  const targetId = l.toLowerCase();
+                  const element = document.getElementById(targetId);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    window.history.pushState(null, '', `#${targetId}`);
+                  }
+                }
+              }}
                className={`font-mono text-[0.7rem] tracking-[0.2em] uppercase transition-colors duration-200 relative group ${getActiveLinkClass(l)}`}>
               {l}
               <span className={`absolute -bottom-1 left-0 w-0 h-px bg-brand-red-400 group-hover:w-full transition-all duration-300 ${getActiveLinkClass(l).includes('text-brand-red-bright') ? 'hidden' : ''}`} />
@@ -503,56 +578,86 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#0e0e14]/95 backdrop-blur-xl md:hidden overflow-hidden">
-          <div className="flex flex-col items-center justify-center h-full px-6 py-safe">
-            <div className="flex flex-col items-center space-y-6 sm:space-y-8 w-full max-w-sm">
-              {links.map(l => (
-                <a
-                  key={l}
-                  href={
-                    l === 'Home' ? (isHomePage ? '#' : '/') :
-                    l === 'Careers' ? '/careers' : 
-                    l === 'Contact' ? '/contact' :
-                    isHomePage ? `#${l.toLowerCase()}` : `/#${l.toLowerCase()}`
-                  }
+        <>
+          <div className="fixed inset-0 w-full h-full z-[9999] md:hidden" style={{
+            backgroundColor: '#0e0e14',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: '100vw',
+            height: '100vh'
+          }}>
+            {/* Close button */}
+            <button 
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-6 right-6 w-14 h-14 flex items-center justify-center text-white bg-brand-red/50 hover:bg-brand-red/70 transition-colors touch-manipulation z-[10000] rounded-full border border-white/30"
+              aria-label="Close menu"
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            {/* Menu content */}
+            <div className="absolute inset-0 flex items-center justify-center px-6">
+              <div className="w-full max-w-sm space-y-5">
+                {links.map(l => (
+                  <a
+                    key={l}
+                    href={
+                      l === 'Home' ? (isHomePage ? '#' : '/') :
+                      l === 'Careers' ? '/careers' : 
+                      l === 'Contact' ? '/contact' :
+                      isHomePage ? `#${l.toLowerCase()}` : `/#${l.toLowerCase()}`
+                    }
                   onClick={(e) => {
                     setMobileMenuOpen(false);
+                    
                     if (l === 'Home' && isHomePage) {
                       e.preventDefault(); 
                       window.scrollTo({ top: 0, behavior: 'smooth' });
+                      // Reset anchor state after scroll
+                      setTimeout(() => {
+                        window.history.replaceState(null, '', window.location.pathname);
+                      }, 500);
+                    } else if (isHomePage && !['Careers', 'Contact'].includes(l)) {
+                      e.preventDefault();
+                      // Small delay to allow menu to close smoothly
+                      setTimeout(() => {
+                        const targetId = l.toLowerCase();
+                        const element = document.getElementById(targetId);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          window.history.pushState(null, '', `#${targetId}`);
+                        }
+                      }, 200);
                     }
                   }}
-                  className={`font-mono text-xl sm:text-2xl tracking-[0.2em] uppercase transition-all duration-200 py-3 px-4 rounded-lg text-center w-full touch-manipulation ${getActiveMobileLinkClass(l)} hover:bg-brand-red/10`}
+                  className={`block font-mono text-xl font-semibold tracking-[0.2em] uppercase transition-all duration-200 py-4 px-5 rounded-lg text-center w-full touch-manipulation border border-white/10 bg-white/5 hover:bg-brand-red/20 hover:border-brand-red/40 ${getActiveMobileLinkClass(l)}`}
                 >
                   {l}
                 </a>
               ))}
+              
+              {/* Get Started Button */}
               <button
                 onClick={() => {
                   setMobileMenuOpen(false)
                   setConsultationModalOpen(true)
                 }}
-                className="flex items-center justify-center gap-3 font-mono text-base tracking-[0.15em] uppercase text-white bg-brand-red border border-brand-red-500 px-8 py-4 rounded-lg hover:bg-brand-red-700 active:bg-brand-red-800 transition-all duration-300 mt-6 w-full touch-manipulation"
-                style={{boxShadow:'0 0 20px rgba(220,38,38,0.3)'}}
+                className="flex items-center justify-center gap-3 font-mono text-sm font-bold tracking-[0.15em] uppercase text-white bg-brand-red border-2 border-brand-red-500 px-8 py-4 rounded-lg hover:bg-brand-red-700 active:bg-brand-red-800 transition-all duration-300 mt-8 w-full touch-manipulation shadow-lg"
+                style={{boxShadow:'0 0 30px rgba(220,38,38,0.5)'}}
               >
-                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                <span className="w-3 h-3 rounded-full bg-white animate-pulse" />
                 Get Started
               </button>
+              </div>
             </div>
-
-            {/* Close menu area */}
-            <button 
-              onClick={() => setMobileMenuOpen(false)}
-              className="absolute top-6 right-6 w-11 h-11 flex items-center justify-center text-brand-red-300 hover:text-white transition-colors touch-manipulation"
-              aria-label="Close menu"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
           </div>
-        </div>
+        </>
       )}
       
       {/* Free Consultation Modal */}

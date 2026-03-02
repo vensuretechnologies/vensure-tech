@@ -103,18 +103,64 @@ export default function Hero() {
         </div>
 
         {/* Title */}
-        <h1 className="font-display font-black leading-[0.9] sm:leading-[0.88] mb-8 sm:mb-10 overflow-visible" style={{fontSize:'clamp(2.5rem,10vw,11rem)'}}>
-          <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.4s forwards'}}>
-            <span className="glitch text-white" data-text="BUILD.">BUILD.</span>
-          </span>
-          <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.55s forwards'}}>
-            <span className="md:hidden text-brand-red-bright" style={{textShadow:'0 0 20px rgba(220,38,38,0.8)'}}>LAUNCH.</span>
-            <span className="hidden md:block" style={{WebkitTextStroke:'2px rgba(220,38,38,0.9)',color:'rgba(220,38,38,0.1)',textShadow:'0 0 30px rgba(220,38,38,0.3)'}}>LAUNCH.</span>
-          </span>
-          <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.7s forwards',color:'#DC2626',textShadow:'0 0 40px rgba(220,38,38,0.5), 0 0 80px rgba(220,38,38,0.2)'}}>
-            SUPPORT.
-          </span>
-        </h1>
+        <div className="relative flex flex-col xl:flex-row xl:items-center xl:gap-12">
+          <h1 className="font-display font-black leading-[0.9] sm:leading-[0.88] mb-8 sm:mb-10 xl:mb-0 overflow-visible flex-1" style={{fontSize:'clamp(2.5rem,10vw,11rem)'}}>
+            <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.4s forwards'}}>
+              <span className="glitch text-white" data-text="BUILD.">BUILD.</span>
+            </span>
+            <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.55s forwards'}}>
+              <span className="md:hidden text-brand-red-bright" style={{textShadow:'0 0 20px rgba(220,38,38,0.8)'}}>LAUNCH.</span>
+              <span className="hidden md:block" style={{WebkitTextStroke:'2px rgba(220,38,38,0.9)',color:'rgba(220,38,38,0.1)',textShadow:'0 0 30px rgba(220,38,38,0.3)'}}>LAUNCH.</span>
+            </span>
+            <span className="block opacity-0" style={{animation:'fadeUp 0.8s 0.7s forwards',color:'#DC2626',textShadow:'0 0 40px rgba(220,38,38,0.5), 0 0 80px rgba(220,38,38,0.2)'}}>
+              SUPPORT.
+            </span>
+          </h1>
+
+          {/* Animated Rocket */}
+          <div className="absolute top-4 right-4 sm:top-8 sm:right-8 xl:relative xl:top-auto xl:right-auto opacity-0 animate-[rocketFadeIn_1.5s_1s_forwards]">
+            <div className="relative animate-[rocketFloat_3s_ease-in-out_infinite]">
+              {/* Exhaust Trail */}
+              <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 transform -translate-x-1/2">
+                <div className="w-1.5 sm:w-2 h-8 sm:h-12 animate-[exhaustFlicker_0.3s_ease-in-out_infinite_alternate]" 
+                     style={{background: 'linear-gradient(to bottom, rgba(255,165,0,0.8), rgba(255,69,0,0.6), transparent)'}}></div>
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-1 h-6 sm:h-8 animate-[exhaustFlicker_0.4s_ease-in-out_infinite_alternate]" 
+                     style={{background: 'linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,165,0,0.7), transparent)'}}></div>
+              </div>
+              
+              {/* Rocket SVG */}
+              <div className="transform hover:scale-110 transition-transform duration-300 cursor-pointer">
+                <svg width="80" height="100" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg sm:w-[100px] sm:h-[125px] xl:w-[120px] xl:h-[150px]">
+                  {/* Rocket Body */}
+                  <path d="M24 2 L18 12 L18 45 L30 45 L30 12 Z" fill="#DC2626" stroke="#B91C1C" strokeWidth="1"/>
+                  
+                  {/* Rocket Nose */}
+                  <path d="M24 2 L18 12 L30 12 Z" fill="#EF4444"/>
+                  
+                  {/* Window */}
+                  <circle cx="24" cy="18" r="4" fill="#1E3A8A" stroke="#3B82F6" strokeWidth="1"/>
+                  <circle cx="24" cy="18" r="2" fill="#60A5FA" opacity="0.8"/>
+                  
+                  {/* Wings */}
+                  <path d="M18 35 L12 50 L18 45 Z" fill="#7C2D12" stroke="#A16207" strokeWidth="1"/>
+                  <path d="M30 35 L36 50 L30 45 Z" fill="#7C2D12" stroke="#A16207" strokeWidth="1"/>
+                  
+                  {/* Details */}
+                  <rect x="20" y="25" width="8" height="2" fill="#B91C1C"/>
+                  <rect x="20" y="30" width="8" height="2" fill="#B91C1C"/>
+                  
+                  {/* Exhaust */}
+                  <path d="M20 45 L24 52 L28 45 Z" fill="#DC2626"/>
+                </svg>
+              </div>
+              
+              {/* Sparkles */}
+              <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full animate-[sparkle_1.5s_ease-in-out_infinite]"></div>
+              <div className="absolute top-2 sm:top-4 -left-2 sm:-left-3 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-400 rounded-full animate-[sparkle_2s_ease-in-out_infinite_0.5s]"></div>
+              <div className="absolute bottom-1 sm:bottom-2 right-6 sm:right-8 w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white rounded-full animate-[sparkle_1.2s_ease-in-out_infinite_1s]"></div>
+            </div>
+          </div>
+        </div>
 
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 opacity-0" style={{animation:'fadeUp 0.8s 0.9s forwards'}}>
@@ -144,6 +190,19 @@ export default function Hero() {
         @keyframes fadeIn { from{opacity:0} to{opacity:1} }
         @keyframes scan { 0%{top:-2px} 100%{top:100vh} }
         @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+        @keyframes rocketFadeIn { from{opacity:0;transform:translateY(-20px) rotate(-10deg)} to{opacity:1;transform:translateY(0) rotate(0deg)} }
+        @keyframes rocketFloat { 
+          0%, 100% { transform: translateY(0px) rotate(-5deg) } 
+          50% { transform: translateY(-15px) rotate(5deg) } 
+        }
+        @keyframes exhaustFlicker { 
+          0% { opacity: 0.8; transform: scaleY(1) } 
+          100% { opacity: 1; transform: scaleY(1.2) } 
+        }
+        @keyframes sparkle { 
+          0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg) } 
+          50% { opacity: 1; transform: scale(1) rotate(180deg) } 
+        }
       `}</style>
     </section>
   )

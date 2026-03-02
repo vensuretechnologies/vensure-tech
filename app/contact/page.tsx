@@ -26,7 +26,7 @@ export default function ContactPage() {
             <span className="font-mono text-xs tracking-[0.25em] text-brand-red-bright/70 uppercase">Get In Touch</span>
           </div>
           
-          <h1 className="font-display font-extrabold text-[clamp(3rem,8vw,6rem)] leading-tight mb-8">
+          <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight mb-8">
             Let's Build Something{' '}
             <span className="gradient-text">Amazing Together</span>
           </h1>
