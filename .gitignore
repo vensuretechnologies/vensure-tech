@@ -12,6 +12,11 @@
 
 # production
 /build
+/dist
+
+# deployment files
+*.zip
+VensureTech-Production.zip
 
 # misc
 .DS_Store
