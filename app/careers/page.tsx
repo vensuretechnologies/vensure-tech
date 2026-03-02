@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
+import Cursor from '@/components/Cursor'
 
 const jobOpenings = [
   {
@@ -447,8 +448,10 @@ export default function CareersPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0e0e14] text-white">
-      <Navbar />
+    <>
+      <Cursor />
+      <main className="min-h-screen bg-[#0e0e14] text-white">
+        <Navbar />
       {/* Header */}
       <section className="relative pt-32 pb-20 px-6 lg:px-16 overflow-hidden">
         <div className="absolute inset-0 bg-radial-purple opacity-60" />
@@ -809,5 +812,6 @@ export default function CareersPage() {
         selectedJob={selectedJob} 
       />
     </main>
+    </>
   )
 }

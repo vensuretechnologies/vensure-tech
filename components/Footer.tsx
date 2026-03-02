@@ -12,7 +12,7 @@ const footerLinks = {
     { name: 'Case Studies', href: '#work' },
     { name: 'Careers', href: '/careers' },
     { name: 'Blog', href: '#' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '/contact' }
   ],
   Legal: [
     { name: 'Privacy Policy', href: '/privacy' },

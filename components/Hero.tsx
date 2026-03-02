@@ -77,7 +77,10 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-end pb-24 px-8 md:px-16 overflow-hidden" style={{background:'radial-gradient(ellipse 80% 60% at 65% 35%, #1e0a3a 0%, #0e0e14 65%)'}}>
+    <section 
+      id="hero"
+      className="relative min-h-screen flex flex-col justify-end pb-24 px-8 md:px-16 overflow-hidden" 
+      style={{background:'radial-gradient(ellipse 80% 60% at 65% 35%, #1e0a3a 0%, #0e0e14 65%)'}}>
       {/* Canvas particles */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 

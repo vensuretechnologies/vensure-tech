@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
+import Cursor from '@/components/Cursor'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy - Vensure Technologies',
@@ -9,8 +10,10 @@ export const metadata: Metadata = {
 
 export default function CookiePage() {
   return (
-    <main className="min-h-screen bg-[#0e0e14] text-white">
-      <Navbar />
+    <>
+      <Cursor />
+      <main className="min-h-screen bg-[#0e0e14] text-white">
+        <Navbar />
       {/* Header */}
       <section className="relative pt-32 pb-16 px-6 lg:px-16">
         <div className="absolute inset-0 bg-radial-purple opacity-40" />
@@ -292,5 +295,6 @@ export default function CookiePage() {
         </div>
       </section>
     </main>
+    </>
   )
 }
