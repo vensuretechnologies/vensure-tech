@@ -10,14 +10,14 @@ const footerLinks = {
   Company: [
     { name: 'About', href: '#' },
     { name: 'Case Studies', href: '#work' },
-    { name: 'Careers', href: 'mailto:careers@vensuretechnologies.in' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Blog', href: '#' },
     { name: 'Contact', href: '#contact' }
   ],
   Legal: [
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of Service', href: '#' },
-    { name: 'Cookie Policy', href: '#' }
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Cookie Policy', href: '/cookies' }
   ],
 }
 

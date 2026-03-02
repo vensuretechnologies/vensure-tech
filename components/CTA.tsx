@@ -43,13 +43,15 @@ export default function CTA() {
 
         <h2 className="reveal font-display font-extrabold leading-[0.9] tracking-tight mb-8"
           style={{ fontSize: 'clamp(3.5rem, 10vw, 9rem)' }}
+          role="heading"
+          aria-level={2}
         >
           <span className="block text-white/90">LET&rsquo;S</span>
           <span className="block gradient-text text-glow">BUILD IT.</span>
         </h2>
 
         <p className="reveal font-body font-light text-base text-white/40 mb-14 max-w-md mx-auto">
-          Tell us what you need — we'll scope it, price it, and deliver it. No fluff, just results.
+          Get a free consultation for your next web development project. We'll analyze your requirements, recommend the best technology stack, and provide a detailed project timeline with transparent pricing.
         </p>
 
         <div className="reveal flex flex-col sm:flex-row items-center justify-center gap-5">

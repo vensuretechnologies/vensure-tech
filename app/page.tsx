@@ -15,29 +15,64 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Vensure Technologies",
+    "alternateName": "Vensure Tech",
     "url": "https://vensuretechnologies.in",
     "logo": "https://vensuretechnologies.in/logo.png",
-    "description": "Professional IT solutions, web development, and digital services for modern businesses.",
+    "description": "Leading IT solutions company in India providing professional web development, e-commerce solutions, cloud migration, and managed IT services.",
+    "foundingDate": "2026",
+    "address": {
+      "@type": "PostalAddress", 
+      "addressCountry": "IN",
+      "addressRegion": "India"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-7799192932",
       "contactType": "customer service",
-      "email": "hello@vensuretechnologies.in"
+      "email": "hello@vensuretechnologies.in",
+      "availableLanguage": ["English", "Hindi"]
     },
     "sameAs": [
       "https://linkedin.com/company/vensure-technologies",
-      "https://twitter.com/vensuretechh",
+      "https://twitter.com/vensuretechh", 
       "https://github.com/vensuretech",
       "https://instagram.com/vensuretech"
     ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "IN"
+    "serviceType": [
+      "Website Development",
+      "E-commerce Development", 
+      "IT Support Services",
+      "Cloud Migration",
+      "UI/UX Design",
+      "Managed IT Services"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
     },
-    "foundingDate": "2026",
-    "employee": {
-      "@type": "Person",
-      "name": "Vensure Team"
+    "priceRange": "$$",
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "IT Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "Custom Website Development",
+            "description": "Professional website development using React, Next.js and modern technologies"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Service",
+            "name": "E-commerce Development",
+            "description": "Complete e-commerce solutions with Shopify, WooCommerce and custom platforms"
+          }
+        }
+      ]
     }
   }
 

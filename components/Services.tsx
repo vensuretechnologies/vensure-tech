@@ -4,38 +4,38 @@ import { useReveal } from './useReveal'
 const services = [
   {
     num: '01',
-    title: 'Website Development',
-    desc: 'Custom websites engineered for speed, accessibility, and conversion — from sleek landing pages to complex multi-page platforms using Next.js, React, and modern stacks.',
+    title: 'Custom Website Development',
+    desc: 'Professional custom website development services using modern technologies like Next.js, React, and TypeScript. We build responsive, SEO-optimized websites that drive conversions and deliver exceptional user experiences for businesses of all sizes.',
     tags: ['Next.js', 'React', 'TypeScript'],
   },
   {
     num: '02',
-    title: 'UI/UX Design',
-    desc: 'User-centred design that transforms complexity into clarity — wireframes, interactive prototypes, and pixel-perfect interfaces built on real user data.',
+    title: 'Professional UI/UX Design Services',
+    desc: 'Expert UI/UX design services that transform complex business requirements into intuitive user interfaces. Our design process includes user research, wireframing, prototyping, and usability testing to ensure optimal user engagement.',
     tags: ['Figma', 'Prototyping', 'User Research'],
   },
   {
     num: '03',
-    title: 'E-Commerce Solutions',
-    desc: 'Scalable online stores on Shopify, WooCommerce, or fully custom stacks — with checkout optimisation, payment integrations, and performance tuning from day one.',
+    title: 'E-Commerce Website Development',
+    desc: 'Complete e-commerce solution development for online businesses. We specialize in Shopify, WooCommerce, and custom e-commerce platforms with secure payment gateways, inventory management, and conversion optimization.',
     tags: ['Shopify', 'WooCommerce', 'Custom'],
   },
   {
     num: '04',
-    title: 'IT Support & Helpdesk',
-    desc: 'Responsive technical support for your team and infrastructure — remote helpdesk, ticketing systems, SLA-backed resolutions, and on-site support when it matters.',
+    title: 'IT Support & Technical Helpdesk',
+    desc: 'Comprehensive IT support and helpdesk services including remote technical assistance, ticketing system management, SLA-backed issue resolution, and on-site computer repair services for businesses across India.',
     tags: ['Remote Support', 'SLA', 'Ticketing'],
   },
   {
     num: '05',
-    title: 'Managed IT Services',
-    desc: 'Proactive monitoring, patching, and maintenance of your entire IT environment — eliminating problems before they disrupt your business operations.',
+    title: 'Managed IT Services & Monitoring',
+    desc: 'Proactive managed IT services including 24/7 network monitoring, system maintenance, security patch management, and infrastructure optimization to prevent downtime and ensure business continuity.',
     tags: ['Monitoring', 'Patching', '24/7'],
   },
   {
     num: '06',
-    title: 'Cloud & System Integration',
-    desc: 'Cloud migrations, API integrations, and systems architecture that connect your tools — unlocking efficiency and eliminating data silos across your organisation.',
+    title: 'Cloud Migration & System Integration',
+    desc: 'Enterprise cloud migration services and system integration solutions. We help businesses migrate to AWS, Azure, and Google Cloud while ensuring seamless integration between existing systems and new cloud infrastructure.',
     tags: ['AWS', 'Azure', 'API'],
   },
 ]
@@ -60,12 +60,12 @@ export default function Services() {
         </div>
 
         <div className="reveal grid md:grid-cols-2 gap-8 mb-20 items-end">
-          <h2 className="font-display text-[clamp(2.2rem,4.5vw,4rem)] font-extrabold leading-tight">
-            End-to-end IT services for{' '}
-            <span className="gradient-text">modern businesses.</span>
+          <h2 className="font-display text-[clamp(2.2rem,4.5vw,4rem)] font-extrabold leading-tight" role="heading" aria-level={2}>
+            Professional IT services for{' '}
+            <span className="gradient-text">modern businesses in India.</span>
           </h2>
           <p className="font-body font-light text-base leading-relaxed text-white/45 md:max-w-sm ml-auto">
-            From pixel-perfect websites to round-the-clock technical support — we cover every layer of your digital infrastructure.
+            From custom website development to enterprise cloud solutions — we deliver comprehensive IT services that help Indian businesses grow and succeed in the digital marketplace.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function Services() {
                 {s.num}
               </div>
 
-              <h3 className="font-display text-xl font-bold mb-4 text-white group-hover:gradient-text transition-all duration-300">
+<h3 className="font-display text-xl font-bold mb-4 text-white group-hover:gradient-text transition-all duration-300" role="heading" aria-level={3}>
                 {s.title}
               </h3>
 

@@ -3,13 +3,14 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vensuretechnologies.in'),
-  title: 'Vensure Technologies — IT Solutions & Digital Services',
-  description: 'We design, develop, and support digital products — from high-performance websites to enterprise IT systems that keep your business running 24/7.',
-  keywords: 'IT solutions, web development, digital services, IT support, cloud integration, website design, enterprise systems',
+  title: 'Vensure Technologies — Professional IT Solutions & Web Development Services India',
+  description: 'Leading IT solutions company in India offering custom website development, e-commerce solutions, cloud migration, managed IT services, and 24/7 technical support. Get free consultation today.',
+  keywords: 'IT solutions India, web development company, custom website development, e-commerce development, cloud migration services, managed IT services, technical support India, Next.js development, React development, Shopify development, IT company India, website design services, digital transformation',
   authors: [{ name: 'Vensure Technologies' }],
   creator: 'Vensure Technologies',
-  publisher: 'Vensure Technologies',
+  publisher: 'Vensure Technologies', 
   robots: 'index, follow',
+  category: 'Technology',
   openGraph: {
     title: 'Vensure Technologies — IT Solutions & Digital Services',
     description: 'Professional IT solutions, web development, and digital services for modern businesses.',
